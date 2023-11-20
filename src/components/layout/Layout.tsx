@@ -9,7 +9,11 @@ import client from "@/apollo-client";
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <ApolloProvider client={client}>
-      <ThemeProvider attribute="class">
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="light"
+        enableSystem={false}
+      >
         <div className="w-full">
           <Nav />
           {children}

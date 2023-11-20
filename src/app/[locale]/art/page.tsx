@@ -2,12 +2,14 @@
 import client from "@/apollo-client";
 import { gql } from "@apollo/client";
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+import NavLink from "@/src/components/link/NavLink";
+import { useLocale } from "next-intl";
 
 const Art = () => {
   const [arts, setArts] = useState([]);
   const pathname = usePathname();
+  const locale = useLocale();
 
   useEffect(() => {
     const fetchArts = async () => {
@@ -15,7 +17,7 @@ const Art = () => {
         const { data } = await client.query({
           query: gql`
             query MyQuery {
-              arts {
+              arts(locales: ${locale}) {
                 id
                 artTitle
               }
@@ -32,14 +34,19 @@ const Art = () => {
     fetchArts();
   }, []);
 
+  type artType = {
+    id: string;
+    artTitle: string;
+  };
+
   return (
     <div>
       art
-      {arts.map((art: any) => (
+      {arts.map((art: artType) => (
         <div key={art.id}>
           <h1>{art.artTitle}</h1>
           <h1>Art nr {art.id}</h1>
-          <Link href={`/art/${art?.id}`}>Art {art?.id}</Link>
+          <NavLink href={`/art/${art?.id}`}>Art {art?.id}</NavLink>
         </div>
       ))}
     </div>

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import client from "@/apollo-client";
 import { gql } from "@apollo/client";
 import Image from "next/image";
-// import { useLocale } from "next-intl";
+import { useLocale } from "next-intl";
 
 type ArtType = {
   art: {
@@ -16,7 +16,7 @@ type ArtType = {
 
 const Art = ({ params }: { params: any }) => {
   const [art, setArt] = useState<ArtType>();
-  //   const locale = useLocale();
+  const locale = useLocale();
 
   useEffect(() => {
     const fetchArt = async () => {
@@ -24,7 +24,7 @@ const Art = ({ params }: { params: any }) => {
         const { data } = await client.query({
           query: gql`
             query MyQuery {
-              art(where: { id: "${params.id}" }) {
+              art(where: { id: "${params.id}"}, locales: ${locale}) {
                 id
                 artCollection
                 artDescription {
@@ -44,6 +44,7 @@ const Art = ({ params }: { params: any }) => {
           `,
           fetchPolicy: "no-cache",
         });
+        console.log(data);
         setArt(data);
       } catch (error) {
         console.error("Error fetching arts", error);
@@ -55,13 +56,13 @@ const Art = ({ params }: { params: any }) => {
   const { id } = params;
 
   return (
-    <h1>
+    <div>
       <p>{art && art?.art.artTitle}</p>
       Art nr {id}
       {art && (
         <Image src={art.art.artImage.url} width={300} height={300} alt="" />
       )}
-    </h1>
+    </div>
   );
 };
 

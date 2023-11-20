@@ -22,7 +22,10 @@ module.exports = {
       bright: "#F0EEF2",
       white: "#fff",
     },
-    fontFamily: { lexend: ["Lexend Deca"], crimson: ["Crimson Text"] },
+    fontFamily: {
+      lexend: ["Lexend", "sans-serif"],
+      crimson: ["Crimson Text", "sans-serif"],
+    },
     fill: {
       dark: "#30302E",
       bright: "#F0EEF2",
