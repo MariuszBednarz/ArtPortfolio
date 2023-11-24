@@ -4,8 +4,12 @@ import { NextIntlClientProvider } from "next-intl";
 import { Lexend, Crimson_Text } from "next/font/google";
 import Layout from "@/src/components/layout/Layout";
 
-const lexend = Lexend({ weight: "400", subsets: ["latin"] });
-const crimson = Crimson_Text({ weight: "400", subsets: ["latin"] });
+const lexend = Lexend({ weight: "400", subsets: ["latin"], display: "swap" });
+const crimson = Crimson_Text({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -28,7 +32,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body className="font-lexend">
+      <body className={lexend.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Layout>{children}</Layout>
         </NextIntlClientProvider>
