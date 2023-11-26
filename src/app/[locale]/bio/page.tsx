@@ -1,5 +1,5 @@
 const Bio = () => {
-  return <h1>Bio</h1>;
+  return <div className="max-w-page w-full">Bio</div>;
 };
 
 export default Bio;

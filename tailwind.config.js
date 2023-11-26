@@ -29,6 +29,10 @@ module.exports = {
     maxWidth: {
       page: "1366px",
     },
+    minHeight: {
+      page: "calc(100vh - 160px)",
+      mobilePage: "calc(100vh - 272px)",
+    },
   },
   plugins: [],
   darkMode: "class",

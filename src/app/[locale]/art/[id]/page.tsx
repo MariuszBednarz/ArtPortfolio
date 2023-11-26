@@ -56,7 +56,7 @@ const Art = ({ params }: { params: any }) => {
   const { id } = params;
 
   return (
-    <div>
+    <div className="max-w-page w-full">
       <p>{art && art?.art.artTitle}</p>
       Art nr {id}
       {art && (

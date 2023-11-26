@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import clsx from "clsx";
 import { useLocale } from "next-intl";
 import { useRouter, usePathname } from "../navigation";
-// import useProperPath from "./useProperPath";
+import { ENIcon, PLIcon } from "./icons";
 
 const LangSwitch = () => {
   const [mounted, setMounted] = useState(false);
@@ -11,7 +11,6 @@ const LangSwitch = () => {
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
-  //   const { handleSwitch } = useProperPath();
 
   const handleSwitch = () => {
     if (locale === "pl") router.replace(pathname, { locale: "en" });
@@ -27,8 +26,8 @@ const LangSwitch = () => {
   }
 
   return (
-    <div className="flex flex-row gap-2">
-      EN
+    <div className="flex flex-row gap-2 justify-center">
+      <ENIcon />
       <div
         onClick={handleSwitch}
         className="relative rounded-ten w-10 h-5 bg-dark dark:bg-bright"
@@ -41,7 +40,7 @@ const LangSwitch = () => {
           )}
         ></div>
       </div>
-      PL
+      <PLIcon />
     </div>
   );
 };

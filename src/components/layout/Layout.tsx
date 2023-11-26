@@ -1,7 +1,7 @@
 "use client";
 import { ThemeProvider } from "next-themes";
 
-import Nav from "./Nav";
+import Nav from "./Nav/Nav";
 import Footer from "./Footer";
 import { ApolloProvider } from "@apollo/client";
 import client from "@/apollo-client";
@@ -14,9 +14,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         defaultTheme="light"
         enableSystem={false}
       >
-        <div className="w-full">
+        <div className="w-screen h-screen">
           <Nav />
-          {children}
+          <main className="w-full flex justify-center min-h-mobilePage sm:min-h-page px-4 md:px-8">
+            {children}
+          </main>
           <Footer />
         </div>
       </ThemeProvider>

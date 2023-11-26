@@ -3,7 +3,7 @@ import client from "@/apollo-client";
 import { gql } from "@apollo/client";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import NavLink from "@/src/components/link/NavLink";
+import NavLink from "@/src/components/layout/Nav/NavLink";
 import { useLocale } from "next-intl";
 
 const Art = () => {

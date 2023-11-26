@@ -26,19 +26,19 @@ const Switch = () => {
   }
 
   return (
-    <div className="flex flex-row gap-2">
-      <SunIcon />
+    <div className="flex flex-row gap-2 justify-center">
+      <MoonIcon />
       <div
         onClick={() => handleSwitch(theme)}
         className="relative rounded-ten w-10 h-5 bg-dark dark:bg-bright"
       >
         <div
           className={clsx(
-            "absolute rounded-ten w-3 h-3 transition ease-in-out bg-bright inset-1 dark:bg-dark dark:translate-x-5"
+            "absolute rounded-ten w-3 h-3 transition translate-x-5 ease-in-out bg-bright inset-1 dark:bg-dark dark:translate-x-0"
           )}
         ></div>
       </div>
-      <MoonIcon />
+      <SunIcon />
     </div>
   );
 };
