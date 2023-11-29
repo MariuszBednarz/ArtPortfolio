@@ -21,7 +21,7 @@ const Nav = () => {
         <div className="block md:hidden">
           <Burger isOpen={isOpen} toggleMenu={toggleMenu} />
         </div>
-        <div className="flex gap-4 flex-col justify-center">
+        <div className="flex gap-4 flex-col justify-center md:flex-row">
           <LangSwitch />
           <ThemeSwitch />
         </div>

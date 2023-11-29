@@ -5,11 +5,6 @@ import { Lexend, Crimson_Text } from "next/font/google";
 import Layout from "@/src/components/layout/Layout";
 
 const lexend = Lexend({ weight: "400", subsets: ["latin"], display: "swap" });
-const crimson = Crimson_Text({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const metadata = {
   title: "Create Next App",

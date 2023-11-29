@@ -16,7 +16,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       >
         <div className="w-screen h-screen">
           <Nav />
-          <main className="w-full flex justify-center min-h-mobilePage sm:min-h-page px-4 md:px-8">
+          <main className="w-full min-h-mobilePage sm:min-h-page">
             {children}
           </main>
           <Footer />
