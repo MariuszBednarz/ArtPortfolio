@@ -1,10 +1,12 @@
+import ContentWrapper from "@/src/components/ContentWrapper";
+
 const ArtLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="max-w-page w-full">
+    <ContentWrapper>
       filters
       {children}
       load more
-    </div>
+    </ContentWrapper>
   );
 };
 

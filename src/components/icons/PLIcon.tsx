@@ -16,7 +16,7 @@ const PLIcon = () => {
         rx="1.75"
         fill="white"
         stroke="#F5F5F5"
-        stroke-width="0.5"
+        strokeWidth="0.5"
       />
       <mask
         id="mask0_11_54"
@@ -34,13 +34,13 @@ const PLIcon = () => {
           rx="1.75"
           fill="white"
           stroke="white"
-          stroke-width="0.5"
+          strokeWidth="0.5"
         />
       </mask>
       <g mask="url(#mask0_11_54)">
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M0 20H28V9.33337H0V20Z"
           fill="#EB2A50"
         />

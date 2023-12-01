@@ -1,5 +1,7 @@
-const Bio = () => {
-  return <div className="max-w-page w-full">Bio</div>;
+import ContentWrapper from "@/src/components/ContentWrapper";
+
+const Bio = ({ children }: { children: React.ReactNode }) => {
+  return <ContentWrapper>Bio</ContentWrapper>;
 };
 
 export default Bio;
