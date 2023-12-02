@@ -14,9 +14,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         defaultTheme="light"
         enableSystem={false}
       >
-        <div className="w-screen h-screen">
+        <div className="w-[calc(100vw - 20px)] h-auto">
           <Nav />
-          <main className="w-full min-h-mobilePage sm:min-h-page">
+          <main className="w-full h-full min-h-mobilePage sm:min-h-page">
             {children}
           </main>
           <Footer />

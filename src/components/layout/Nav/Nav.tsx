@@ -13,7 +13,7 @@ const Nav = () => {
   };
 
   return (
-    <header className="flex w-screen justify-center bg-bright dark:bg-dark px-4 md:px-8 shadow-md">
+    <header className="flex w-full justify-center bg-bright dark:bg-dark px-4 md:px-8 shadow-md">
       <nav className="flex w-full max-w-page flex-row justify-between h-20 items-center">
         <div className="hidden md:block">
           <NavLinks />
@@ -27,7 +27,7 @@ const Nav = () => {
         </div>
         <div
           className={clsx(
-            "bg-white dark:bg-dark shadow-md absolute mt-20 px-4 py-8 w-screen top-0 left-0 block md:hidden transform transition duration-300 ease-in-out",
+            "bg-white dark:bg-dark shadow-md absolute mt-20 px-4 py-8 w-full top-0 left-0 block md:hidden transform transition duration-300 ease-in-out",
             {
               "": isOpen,
               "opacity-0 -translate-x-full": !isOpen,
