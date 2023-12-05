@@ -1,7 +1,7 @@
-import ContentWrapper from "@/src/components/ContentWrapper";
+import Bio from "@/src/features/bio/Bio";
 
-const Bio = ({ children }: { children: React.ReactNode }) => {
-  return <ContentWrapper>Bio</ContentWrapper>;
+const BioPage = ({ children }: { children: React.ReactNode }) => {
+  return <Bio />;
 };
 
-export default Bio;
+export default BioPage;

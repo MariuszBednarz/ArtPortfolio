@@ -4,6 +4,7 @@ module.exports = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/features/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -12,30 +13,34 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-    },
-    borderRadius: {
-      ten: "10px",
-      four: "4px",
-    },
-    colors: {
-      dark: "#30302E",
-      darker: "#20201D",
-      highlight: "#7B9080",
-      bright: "#F0EEF2",
-      white: "#fff",
-    },
-    fill: {
-      dark: "#30302E",
-      bright: "#F0EEF2",
-    },
-    maxWidth: {
-      page: "1366px",
-    },
-    minHeight: {
-      page: "calc(100vh - 160px)",
-      mobilePage: "calc(100vh - 272px)",
+      borderRadius: {
+        ten: "10px",
+        four: "4px",
+      },
+      colors: {
+        dark: "#30302E",
+        darker: "#20201D",
+        highlight: "#7B9080",
+        bright: "#F0EEF2",
+        white: "#fff",
+      },
+      fill: {
+        dark: "#30302E",
+        bright: "#F0EEF2",
+      },
+      maxWidth: {
+        page: "1366px",
+      },
+      minHeight: {
+        page: "calc(100vh - 160px)",
+        mobilePage: "calc(100vh - 272px)",
+      },
+      height: {
+        banner: "300px",
+      },
     },
   },
+
   plugins: [],
   darkMode: "class",
 };

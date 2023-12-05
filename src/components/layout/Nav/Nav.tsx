@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { useState } from "react";
+
 import ThemeSwitch from "../../ThemeSwitch";
 import LangSwitch from "../../LangSwitch";
 import NavLinks from "./NavLinks";
@@ -13,8 +14,8 @@ const Nav = () => {
   };
 
   return (
-    <header className="flex w-full justify-center bg-bright dark:bg-dark px-4 md:px-8 shadow-md">
-      <nav className="flex w-full max-w-page flex-row justify-between h-20 items-center">
+    <header className="flex w-full justify-center bg-bright dark:bg-dark shadow-md">
+      <nav className="flex w-full max-w-page flex-row justify-between h-20 items-center px-8">
         <div className="hidden md:block">
           <NavLinks />
         </div>

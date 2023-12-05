@@ -1,7 +1,10 @@
 import clsx from "clsx";
 import NavLink from "./NavLink";
+import { useTranslations } from "next-intl";
 
 const NavLinks = ({ mobile }: { mobile?: boolean | undefined }) => {
+  const t = useTranslations("Nav");
+
   return (
     <ul
       className={clsx(
@@ -10,13 +13,13 @@ const NavLinks = ({ mobile }: { mobile?: boolean | undefined }) => {
       )}
     >
       <li className="text-lg">
-        <NavLink href="/">Strona główna</NavLink>
+        <NavLink href="/">{t("home")}</NavLink>
       </li>
       <li className="text-lg">
-        <NavLink href="/art">Katalog prac</NavLink>
+        <NavLink href="/art">{t("art")}</NavLink>
       </li>
       <li className="text-lg">
-        <NavLink href="/bio">Wiesław F. Bednarz</NavLink>
+        <NavLink href="/bio">{t("bio")}</NavLink>
       </li>
     </ul>
   );
