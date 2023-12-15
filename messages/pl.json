@@ -16,5 +16,20 @@
     "awardTitle": "Wyróżnienia i nagrody",
     "awardDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
-  "Art": {}
+  "Art": {
+    "year": "Rocznik",
+    "collection": "Kolekcja"
+  },
+  "Select": {
+    "clean": "Wyczyść filtr",
+    "None": "Prace nieujęte w kolekcjach",
+    "Well": "Studnie",
+    "Stones": "Rzeźby kamienne",
+    "Structures": "Struktury",
+
+    "PAINTING": "Malarstwo",
+    "SCULPTURE": "Rzeźba",
+    "CERAMICS": "Ceramika",
+    "PERFORMANCE": "Performance"
+  }
 }

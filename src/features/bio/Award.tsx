@@ -8,14 +8,15 @@ const crimson = Crimson_Text({
   display: "swap",
 });
 
-const Award = ({ data }: { data: any }) => {
+const Award = ({ data, lastItem }: { data: any; lastItem: boolean }) => {
   const { title, description } = data;
+
   return (
     <div className="bg-brightw-full flex flex-col items-center">
       <div className={clsx(" px-8 max-w-[600px]", crimson.className)}>
         <h1 className="text-2xl mb-4">{title}</h1>
         <p>{description}</p>
-        <Divider />
+        {lastItem && <Divider />}
       </div>
     </div>
   );

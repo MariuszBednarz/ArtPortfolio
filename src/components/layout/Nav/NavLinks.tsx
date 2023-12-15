@@ -8,7 +8,7 @@ const NavLinks = ({ mobile }: { mobile?: boolean | undefined }) => {
   return (
     <ul
       className={clsx(
-        "flex flex-row center gap-8 items-start dark:text-bright text-dark ",
+        "flex flex-row center gap-8 items-start dark:text-bright text-dark",
         { "flex-col": mobile === true }
       )}
     >

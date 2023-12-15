@@ -50,8 +50,14 @@ const Bio = () => {
         </div>
       </ContentWrapper>
       <div className="py-8 bg-bright dark:bg-dark">
-        {content.map((item) => {
-          return <Award key={item.nr} data={item} />;
+        {content.map((item, index) => {
+          return (
+            <Award
+              key={item.nr}
+              data={item}
+              lastItem={index !== content.length - 1}
+            />
+          );
         })}
       </div>
     </>
