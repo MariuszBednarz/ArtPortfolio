@@ -1,8 +1,7 @@
 import clsx from "clsx";
 import { useState } from "react";
 
-import ThemeSwitch from "../../ThemeSwitch";
-import LangSwitch from "../../LangSwitch";
+import { ThemeSwitch, LangSwitch } from "@/src/components";
 import NavLinks from "./NavLinks";
 import Burger from "./Burger";
 

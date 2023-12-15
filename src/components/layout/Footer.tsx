@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+
 import NavLink from "./Nav/NavLink";
 
 const Footer = () => {

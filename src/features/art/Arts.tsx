@@ -1,46 +1,45 @@
 "use client";
-import client from "@/apollo-client";
 import { gql } from "@apollo/client";
 import { useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
-import NavLink from "@/src/components/layout/Nav/NavLink";
 import { useLocale } from "next-intl";
 
-import Select from "@/src/components/select/Select";
+import client from "@/apollo-client";
+
+import NavLink from "@/src/components/layout/Nav/NavLink";
+import MasonryComponent from "../../components/Masonry";
+import { Select, Checkbox, ContentWrapper } from "@/src/components";
 
 const Arts = () => {
-  const t = useTranslations("Art");
-
-  const defaultYear = t("year");
-  const defaultCol = t("collection");
-  // const defaultType = ""
-
-  const [arts, setArts] = useState([]);
   const locale = useLocale();
 
+  const defaultYear = "year";
+  const defaultCol = "collection";
+
+  const [arts, setArts] = useState([]);
   const [year, setYear] = useState(defaultYear);
   const [collection, setCollection] = useState(defaultCol);
-  // const [type, setType] = useState()
+  const [type, setType] = useState();
 
-  const [isFiltered, setIsFiltered] = useState(false);
-
-  //query build on each fire, check gpt history
-  // where: {artYear: 2001, artType: PAINTING, artCollection: None}
+  const handleCheckbox = (value: any) => {
+    if (!type || value !== type) {
+      setType(value);
+    } else {
+      setType(undefined);
+    }
+  };
 
   useEffect(() => {
     const buildQuery = () => {
       let filterConditions = [];
-
       if (year !== defaultYear) {
         filterConditions.push(`artYear: ${year}`);
       }
       if (collection !== defaultCol) {
         filterConditions.push(`artCollection: ${collection}`);
       }
-      // if (type !== defaultType){
-      //   filterConditions.push(`artType: ${type}`)
-      // }s
-
+      if (type) {
+        filterConditions.push(`artType: ${type}`);
+      }
       if (filterConditions.length == 0) {
         return "";
       } else {
@@ -54,12 +53,7 @@ const Arts = () => {
           query: gql`
             query MyQuery {
               arts(locales: ${locale}${query}) {
-                id
-                artCollection
-                artDescription {
-                  html
-                  text
-                }
+               id
                 artImage {
                   width
                   id
@@ -67,7 +61,6 @@ const Arts = () => {
                   mimeType
                   url
                 }
-                artTitle
               }
             }
           `,
@@ -78,42 +71,39 @@ const Arts = () => {
         console.error("Error fetching arts", error);
       }
     };
-
     const query = buildQuery();
     fetchArts(query);
-  }, [year, collection]);
-
-  type artType = {
-    id: string;
-    artTitle: string;
-  };
+  }, [year, collection, type]);
 
   const years = Array.from({ length: 2022 - 1958 + 1 }, (_, i) => i + 1958);
   const collections = ["None", "Well", "Stones", "Structures"];
+  const checkboxes = ["PAINTING", "SCULPTURE", "PERFORMANCE", "CERAMICS"];
 
   return (
-    <div>
-      <Select
-        options={years}
-        selectedOption={year}
-        setSelectedOption={setYear}
-        defaultValue={defaultYear}
-      />
-      <Select
-        options={collections}
-        selectedOption={collection}
-        setSelectedOption={setCollection}
-        defaultValue={defaultCol}
-      />
-      art
-      {arts.map((art: artType) => (
-        <div key={art.id}>
-          <h1>{art.artTitle}</h1>
-          <h1>Art nr {art.id}</h1>
-          <NavLink href={`/art/${art?.id}`}>Art {art?.id}</NavLink>
-        </div>
-      ))}
-    </div>
+    <ContentWrapper>
+      <div className="flex px-8 py-4 gap-4">
+        <Select
+          options={years}
+          selectedOption={year}
+          setSelectedOption={setYear}
+          defaultValue={defaultYear}
+        />
+        <Select
+          options={collections}
+          selectedOption={collection}
+          setSelectedOption={setCollection}
+          defaultValue={defaultCol}
+        />
+        {checkboxes.map((item) => (
+          <Checkbox
+            text={item}
+            selected={type === item}
+            handleCheckbox={handleCheckbox}
+          />
+        ))}
+      </div>
+      <MasonryComponent data={arts} />
+    </ContentWrapper>
   );
 };
 

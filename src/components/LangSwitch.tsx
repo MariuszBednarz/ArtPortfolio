@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import clsx from "clsx";
 import { useLocale } from "next-intl";
+
 import { useRouter, usePathname } from "../navigation";
 import { ENIcon, PLIcon } from "./icons";
 

@@ -18,18 +18,15 @@
   },
   "Art": {
     "year": "Rocznik",
-    "collection": "Kolekcja"
-  },
-  "Select": {
+    "collection": "Kolekcja",
+    "PAINTING": "Malarstwo",
+    "SCULPTURE": "Rzeźba",
+    "CERAMICS": "Ceramika",
+    "PERFORMANCE": "Performance",
     "clean": "Wyczyść filtr",
     "None": "Prace nieujęte w kolekcjach",
     "Well": "Studnie",
     "Stones": "Rzeźby kamienne",
-    "Structures": "Struktury",
-
-    "PAINTING": "Malarstwo",
-    "SCULPTURE": "Rzeźba",
-    "CERAMICS": "Ceramika",
-    "PERFORMANCE": "Performance"
+    "Structures": "Struktury"
   }
 }

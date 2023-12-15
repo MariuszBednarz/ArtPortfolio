@@ -1,6 +1,7 @@
 import clsx from "clsx";
-import NavLink from "./NavLink";
 import { useTranslations } from "next-intl";
+
+import NavLink from "./NavLink";
 
 const NavLinks = ({ mobile }: { mobile?: boolean | undefined }) => {
   const t = useTranslations("Nav");

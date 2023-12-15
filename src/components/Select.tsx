@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
 
+import { Chevron } from "./icons";
+
 const Select = ({
   options,
   selectedOption,
@@ -14,7 +16,7 @@ const Select = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const t = useTranslations("Select");
+  const t = useTranslations("Art");
   const dropdownRef = useRef(null);
 
   const toggleDropdown = () => setIsOpen(!isOpen);
@@ -44,17 +46,20 @@ const Select = ({
   }, [dropdownRef]);
 
   return (
-    <div className="relative w-full max-w-xs mx-auto" ref={dropdownRef}>
+    <div className="relative w-60 h-10" ref={dropdownRef}>
       <button
-        className="block w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+        className="flex items-center justify-between px-4 w-full border border-dark dark:border-white h-full rounded-[4px]"
         onClick={toggleDropdown}
       >
-        {selectedOption}
+        {typeof selectedOption === "number"
+          ? selectedOption
+          : t(selectedOption)}
+        <Chevron rotate={isOpen} />
       </button>
       {isOpen && (
-        <div className="absolute bg-white border border-gray-400 rounded shadow mt-1 w-full z-10 max-h-80 overflow-auto">
+        <div className="absolute shadow z-10 w-full max-h-80 overflow-auto bg-white dark:bg-darker border border-dark dark:border-white rounded-[4px]">
           <div
-            className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+            className="px-4 py-2 dark:hover:bg-dark hover:bg-bright cursor-pointer"
             onClick={() => cleanFilter(defaultValue)}
           >
             {t("clean")}
@@ -62,7 +67,7 @@ const Select = ({
           {options.map((option, index) => (
             <div
               key={index}
-              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+              className="px-4 py-2 dark:hover:bg-dark hover:bg-bright cursor-pointer"
               onClick={() => handleOptionClick(option)}
             >
               {typeof option === "number" ? option : t(option)}

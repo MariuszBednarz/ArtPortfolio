@@ -18,18 +18,15 @@
   },
   "Art": {
     "year": "Year",
-    "collection": "Collection"
-  },
-  "Select": {
+    "collection": "Collection",
+    "PAINTING": "Paintings",
+    "SCULPTURE": "Sculptures",
+    "CERAMICS": "Ceramics",
+    "PERFORMANCE": "Performances",
     "clean": "Clean filters",
     "None": "Works not included in collections",
-    "Well": "Well ",
+    "Well": "Well",
     "Stones": "Stone sculptures",
-    "Structures": "Structures",
-
-    "PAINTING": "Painting",
-    "SCULPTURE": "Sculpture",
-    "CERAMICS": "Ceramics",
-    "PERFORMANCE": "Performance"
+    "Structures": "Structures"
   }
 }

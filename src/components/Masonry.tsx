@@ -1,6 +1,11 @@
 import ContentWrapper from "@/src/components/ContentWrapper";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
+// link to art
+{
+  /* <NavLink href={`/art/${art?.id}`}>Art {art?.id}</NavLink> */
+}
+
 const MasonryComponent = ({ data }: { data: never[] }) => {
   return (
     <ContentWrapper>

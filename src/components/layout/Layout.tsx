@@ -1,10 +1,11 @@
 "use client";
 import { ThemeProvider } from "next-themes";
+import { ApolloProvider } from "@apollo/client";
+
+import client from "@/apollo-client";
 
 import Nav from "./Nav/Nav";
 import Footer from "./Footer";
-import { ApolloProvider } from "@apollo/client";
-import client from "@/apollo-client";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
