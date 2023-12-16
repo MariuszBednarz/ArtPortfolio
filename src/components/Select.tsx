@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
+import { clsx } from "clsx";
 
 import { Chevron } from "./icons";
 
@@ -46,15 +47,24 @@ const Select = ({
   }, [dropdownRef]);
 
   return (
-    <div className="relative w-60 h-10" ref={dropdownRef}>
+    <div
+      className="relative w-32 md:w-40 h-8 md:h-10 text-xs md:text-base"
+      ref={dropdownRef}
+    >
       <button
-        className="flex items-center justify-between px-4 w-full border border-dark dark:border-white h-full rounded-[4px]"
+        className={clsx(
+          "flex items-center justify-between px-4 w-full border border-dark dark:border-white h-full rounded",
+          {
+            "text-highlight border-highlight border-2":
+              selectedOption !== defaultValue,
+          }
+        )}
         onClick={toggleDropdown}
       >
         {typeof selectedOption === "number"
           ? selectedOption
           : t(selectedOption)}
-        <Chevron rotate={isOpen} />
+        <Chevron rotate={isOpen} selected={selectedOption !== defaultValue} />
       </button>
       {isOpen && (
         <div className="absolute shadow z-10 w-full max-h-80 overflow-auto bg-white dark:bg-darker border border-dark dark:border-white rounded-[4px]">

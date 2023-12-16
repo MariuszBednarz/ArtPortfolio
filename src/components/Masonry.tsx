@@ -1,28 +1,44 @@
-import ContentWrapper from "@/src/components/ContentWrapper";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import clsx from "clsx";
+
+import NavLink from "./layout/Nav/NavLink";
+import ContentWrapper from "@/src/components/ContentWrapper";
 
 // link to art
-{
-  /* <NavLink href={`/art/${art?.id}`}>Art {art?.id}</NavLink> */
-}
 
-const MasonryComponent = ({ data }: { data: never[] }) => {
+const MasonryComponent = ({
+  data,
+  artPage,
+}: {
+  data: never[];
+  artPage?: boolean;
+}) => {
   return (
     <ContentWrapper>
-      <ResponsiveMasonry
-        columnsCountBreakPoints={{ 350: 1, 480: 2, 768: 3 }}
-        className="py-8"
-      >
-        <Masonry gutter="32px">
-          {data.map((art) => {
-            return (
-              <div key={art.id}>
-                <img src={art.artImage.url} alt="" className="w-full" />
-              </div>
-            );
-          })}
-        </Masonry>
-      </ResponsiveMasonry>
+      {data.length === 0 ? (
+        "no results"
+      ) : (
+        <ResponsiveMasonry
+          columnsCountBreakPoints={{ 350: 1, 480: 2, 768: 3 }}
+          className={clsx("py-8", { "py-0": artPage })}
+        >
+          <Masonry gutter="32px">
+            {data.map((art) => {
+              return (
+                <div key={art.id}>
+                  {artPage ? (
+                    <NavLink href={`/art/${art?.id}`}>
+                      <img src={art.artImage.url} alt="" className="w-full" />
+                    </NavLink>
+                  ) : (
+                    <img src={art.artImage.url} alt="" className="w-full" />
+                  )}
+                </div>
+              );
+            })}
+          </Masonry>
+        </ResponsiveMasonry>
+      )}
     </ContentWrapper>
   );
 };

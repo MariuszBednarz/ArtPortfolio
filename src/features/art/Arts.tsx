@@ -5,7 +5,6 @@ import { useLocale } from "next-intl";
 
 import client from "@/apollo-client";
 
-import NavLink from "@/src/components/layout/Nav/NavLink";
 import MasonryComponent from "../../components/Masonry";
 import { Select, Checkbox, ContentWrapper } from "@/src/components";
 
@@ -81,28 +80,32 @@ const Arts = () => {
 
   return (
     <ContentWrapper>
-      <div className="flex px-8 py-4 gap-4">
-        <Select
-          options={years}
-          selectedOption={year}
-          setSelectedOption={setYear}
-          defaultValue={defaultYear}
-        />
-        <Select
-          options={collections}
-          selectedOption={collection}
-          setSelectedOption={setCollection}
-          defaultValue={defaultCol}
-        />
-        {checkboxes.map((item) => (
-          <Checkbox
-            text={item}
-            selected={type === item}
-            handleCheckbox={handleCheckbox}
+      <div className="flex items-center lg:items-start flex-col py-4 gap-4 lg:flex-row">
+        <div className="flex gap-4">
+          <Select
+            options={years}
+            selectedOption={year}
+            setSelectedOption={setYear}
+            defaultValue={defaultYear}
           />
-        ))}
+          <Select
+            options={collections}
+            selectedOption={collection}
+            setSelectedOption={setCollection}
+            defaultValue={defaultCol}
+          />
+        </div>
+        <div className="flex items-center justify-center gap-4 flex-wrap">
+          {checkboxes.map((item) => (
+            <Checkbox
+              text={item}
+              selected={type === item}
+              handleCheckbox={handleCheckbox}
+            />
+          ))}
+        </div>
       </div>
-      <MasonryComponent data={arts} />
+      <MasonryComponent data={arts} artPage />
     </ContentWrapper>
   );
 };
