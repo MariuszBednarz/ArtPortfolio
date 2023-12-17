@@ -5,7 +5,7 @@ import { gql } from "@apollo/client";
 
 import client from "@/apollo-client";
 
-import MasonryComponent from "../../components/Masonry";
+import { MasonryComponent } from "@/src/components";
 import Banner from "./Banner";
 
 const Home = () => {

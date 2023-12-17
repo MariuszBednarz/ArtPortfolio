@@ -1,7 +1,8 @@
 import "./globals.css";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
-import { Lexend, Crimson_Text } from "next/font/google";
+import { Lexend } from "next/font/google";
+
 import Layout from "@/src/components/layout/Layout";
 
 const lexend = Lexend({ weight: "400", subsets: ["latin"], display: "swap" });

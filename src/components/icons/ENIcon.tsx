@@ -11,7 +11,6 @@ const ENIcon = () => {
       <rect width="28" height="20" rx="2" fill="white" />
       <mask
         id="mask0_11_58"
-        // style="mask-type:luminance"
         maskUnits="userSpaceOnUse"
         x="0"
         y="0"

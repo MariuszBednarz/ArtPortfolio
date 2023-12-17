@@ -5,6 +5,7 @@ import Divider from "./Divider";
 import LangSwitch from "./LangSwitch";
 import Select from "./Select";
 import ThemeSwitch from "./ThemeSwitch";
+import MasonryComponent from "./Masonry";
 
 export {
   Button,
@@ -14,4 +15,5 @@ export {
   LangSwitch,
   Select,
   ThemeSwitch,
+  MasonryComponent,
 };

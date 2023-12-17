@@ -5,8 +5,12 @@ import { useLocale } from "next-intl";
 
 import client from "@/apollo-client";
 
-import MasonryComponent from "../../components/Masonry";
-import { Select, Checkbox, ContentWrapper } from "@/src/components";
+import {
+  Select,
+  Checkbox,
+  ContentWrapper,
+  MasonryComponent,
+} from "@/src/components";
 
 const Arts = () => {
   const locale = useLocale();

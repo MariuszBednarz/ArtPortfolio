@@ -1,6 +1,6 @@
-"use-client";
-import { useState, useEffect } from "react";
+"use client";
 import clsx from "clsx";
+import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 
 import { MoonIcon, SunIcon } from "./icons";

@@ -1,6 +1,13 @@
 import clsx from "clsx";
-import Divider from "@/src/components/Divider";
 import { Crimson_Text } from "next/font/google";
+
+import Divider from "@/src/components/Divider";
+
+type dataType = {
+  nr: number;
+  title: string;
+  description: string;
+};
 
 const crimson = Crimson_Text({
   weight: "400",
@@ -8,7 +15,7 @@ const crimson = Crimson_Text({
   display: "swap",
 });
 
-const Award = ({ data, lastItem }: { data: any; lastItem: boolean }) => {
+const Award = ({ data, lastItem }: { data: dataType; lastItem: boolean }) => {
   const { title, description } = data;
 
   return (

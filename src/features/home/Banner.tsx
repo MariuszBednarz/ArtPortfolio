@@ -3,9 +3,10 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Crimson_Text } from "next/font/google";
 
-import brush from "@/public/brush.png";
-import Button from "@/src/components/Button";
+import { Button } from "@/src/components";
 import NavLink from "@/src/components/layout/Nav/NavLink";
+
+import brush from "@/public/brush.png";
 
 const crimson = Crimson_Text({
   weight: "400",
@@ -39,7 +40,7 @@ const Banner = () => {
       </div>
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white w-full flex flex-col items-center gap-[10px] px-8">
         <h1 className="text-3xl">Wiesław F. Bednarz</h1>
-        <div className="w-full max-w-[434px] h-1 bg-bright rounded-[2px]"></div>
+        <div className="w-full max-w-[434px] h-1 bg-bright rounded-sm"></div>
         <p>Portfolio</p>
         <div className="flex flex-col gap-4 sm:flex-row">
           <NavLink href="/bio">

@@ -1,9 +1,9 @@
-"use-client";
-import { useState, useEffect } from "react";
+"use client";
 import clsx from "clsx";
+import { useState, useEffect } from "react";
 import { useLocale } from "next-intl";
 
-import { useRouter, usePathname } from "../navigation";
+import { useRouter, usePathname } from "@/src/navigation";
 import { ENIcon, PLIcon } from "./icons";
 
 const LangSwitch = () => {

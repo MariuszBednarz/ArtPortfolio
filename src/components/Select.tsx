@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { clsx } from "clsx";
@@ -10,30 +11,31 @@ const Select = ({
   setSelectedOption,
   defaultValue,
 }: {
-  options: any;
+  options: string[] | number[];
   selectedOption: any;
   setSelectedOption: any;
   defaultValue: any;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const t = useTranslations("Art");
-  const dropdownRef = useRef(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const toggleDropdown = () => setIsOpen(!isOpen);
+  const handleDropdown = () => setIsOpen(!isOpen);
 
-  const handleOptionClick = (option) => {
+  const handleOptionClick = (option: string | number) => {
     setSelectedOption(option);
     setIsOpen(false);
   };
 
-  const cleanFilter = (defaultValue) => {
+  const cleanFilter = (defaultValue: string) => {
     setSelectedOption(defaultValue);
     setIsOpen(false);
   };
 
+  const t = useTranslations("Art");
+
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    const handleClickOutside = (event: { target: any }) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsOpen(false);
       }
@@ -59,7 +61,7 @@ const Select = ({
               selectedOption !== defaultValue,
           }
         )}
-        onClick={toggleDropdown}
+        onClick={handleDropdown}
       >
         {typeof selectedOption === "number"
           ? selectedOption

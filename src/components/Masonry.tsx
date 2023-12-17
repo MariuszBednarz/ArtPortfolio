@@ -4,18 +4,24 @@ import clsx from "clsx";
 import NavLink from "./layout/Nav/NavLink";
 import ContentWrapper from "@/src/components/ContentWrapper";
 
-// link to art
+type artObj = {
+  id: string;
+  artImage: {
+    url: string;
+  };
+};
 
 const MasonryComponent = ({
   data,
   artPage,
 }: {
-  data: never[];
+  data?: artObj[];
   artPage?: boolean;
 }) => {
+  console.log(data);
   return (
     <ContentWrapper>
-      {data.length === 0 ? (
+      {data?.length === 0 ? (
         "no results"
       ) : (
         <ResponsiveMasonry
@@ -23,7 +29,7 @@ const MasonryComponent = ({
           className={clsx("py-8", { "py-0": artPage })}
         >
           <Masonry gutter="32px">
-            {data.map((art) => {
+            {data?.map((art) => {
               return (
                 <div key={art.id}>
                   {artPage ? (
