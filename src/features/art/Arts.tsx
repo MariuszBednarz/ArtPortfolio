@@ -69,7 +69,6 @@ const Arts = () => {
           `,
           fetchPolicy: "no-cache",
         });
-        console.log(data.arts);
         setLoading(false);
         setArts(data.arts);
       } catch (error) {

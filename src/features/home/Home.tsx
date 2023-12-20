@@ -10,6 +10,8 @@ import Banner from "./Banner";
 
 const Home = () => {
   const [arts, setArts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   const locale = useLocale();
 
   useEffect(() => {
@@ -34,6 +36,7 @@ const Home = () => {
         });
         const arr = data.arts.sort(() => Math.random() - 0.5);
         const firstTen = arr.slice(0, 10);
+        setLoading(false);
         setArts(firstTen);
       } catch (error) {
         console.error("Error fetching arts", error);
@@ -46,7 +49,7 @@ const Home = () => {
   return (
     <div>
       <Banner />
-      <MasonryComponent data={arts} />
+      <MasonryComponent loading={loading} data={arts} />
     </div>
   );
 };
