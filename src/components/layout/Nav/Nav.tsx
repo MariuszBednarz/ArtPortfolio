@@ -35,7 +35,7 @@ const Nav = () => {
             }
           )}
         >
-          <NavLinks mobile />
+          <NavLinks mobile toggleMenu={toggleMenu} />
         </div>
       </nav>
     </header>

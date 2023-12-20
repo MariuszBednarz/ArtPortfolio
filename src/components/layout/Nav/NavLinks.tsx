@@ -3,7 +3,13 @@ import { useTranslations } from "next-intl";
 
 import NavLink from "./NavLink";
 
-const NavLinks = ({ mobile }: { mobile?: boolean | undefined }) => {
+const NavLinks = ({
+  mobile,
+  toggleMenu,
+}: {
+  mobile?: boolean | undefined;
+  toggleMenu?: () => void;
+}) => {
   const t = useTranslations("Nav");
 
   return (
@@ -13,13 +19,13 @@ const NavLinks = ({ mobile }: { mobile?: boolean | undefined }) => {
         { "flex-col": mobile === true }
       )}
     >
-      <li className="text-lg">
+      <li className="text-lg" onClick={toggleMenu}>
         <NavLink href="/">{t("home")}</NavLink>
       </li>
-      <li className="text-lg">
+      <li className="text-lg" onClick={toggleMenu}>
         <NavLink href="/art">{t("art")}</NavLink>
       </li>
-      <li className="text-lg">
+      <li className="text-lg" onClick={toggleMenu}>
         <NavLink href="/bio">{t("bio")}</NavLink>
       </li>
     </ul>

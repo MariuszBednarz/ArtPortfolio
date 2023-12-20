@@ -35,7 +35,7 @@ const MasonryComponent = ({
           columnsCountBreakPoints={{ 350: 1, 480: 2, 768: 3 }}
           className={clsx("py-8", { "py-0": artPage })}
         >
-          <Masonry gutter="32px">
+          <Masonry gutter="16px">
             {data?.map((art) => (
               <div key={art.id}>
                 {artPage ? (

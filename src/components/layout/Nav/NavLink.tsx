@@ -17,10 +17,7 @@ export default function NavLink<Pathname extends AppPathnames>({
   return (
     <Link
       aria-current={isActive ? "page" : undefined}
-      className={clsx(
-        "inline-block transition-colors w-full",
-        isActive && "text-highlight"
-      )}
+      className={clsx(" w-full h-full", isActive && "text-highlight")}
       href={href}
       {...rest}
     />

@@ -5,6 +5,15 @@ import { gql } from "@apollo/client";
 import Image from "next/image";
 import { useLocale } from "next-intl";
 
+//TODO:
+//1. Move art/id to features
+// 2. Closing mobile nav on redirect - DONE
+//3. Add art/id page design
+//4. Add no results
+//5. Add Loading
+//6. SEO
+//7. Analitics
+
 type ArtType = {
   art: {
     artTitle: string;
