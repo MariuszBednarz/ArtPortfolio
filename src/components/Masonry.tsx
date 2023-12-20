@@ -33,6 +33,7 @@ const MasonryComponent = ({
               return (
                 <div key={art.id}>
                   {artPage ? (
+                    // @ts-ignore
                     <NavLink href={`/art/${art?.id}`}>
                       <img src={art.artImage.url} alt="" className="w-full" />
                     </NavLink>
