@@ -18,7 +18,7 @@ const Home = () => {
         const { data } = await client.query({
           query: gql`
             query MyQuery {
-              arts(locales: ${locale}) {
+              arts(first: 100, locales: ${locale}) {
                 id
                 artImage {
                   width
@@ -33,7 +33,8 @@ const Home = () => {
           fetchPolicy: "no-cache",
         });
         const arr = data.arts.sort(() => Math.random() - 0.5);
-        setArts(arr);
+        const firstTen = arr.slice(0, 10);
+        setArts(firstTen);
       } catch (error) {
         console.error("Error fetching arts", error);
       }

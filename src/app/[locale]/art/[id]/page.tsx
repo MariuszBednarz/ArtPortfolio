@@ -24,7 +24,7 @@ const Art = ({ params }: { params: any }) => {
         const { data } = await client.query({
           query: gql`
             query MyQuery {
-              art(where: { id: "${params.id}"}, locales: ${locale}) {
+              art(locales: ${locale}, where: { id: "${params.id}"}) {
                 id
                 artCollection
                 artDescription {
@@ -44,7 +44,6 @@ const Art = ({ params }: { params: any }) => {
           `,
           fetchPolicy: "no-cache",
         });
-        console.log(data);
         setArt(data);
       } catch (error) {
         console.error("Error fetching arts", error);

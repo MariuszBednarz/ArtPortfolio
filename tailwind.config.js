@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        "pulse-slow": "pulse 3s linear infinite",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

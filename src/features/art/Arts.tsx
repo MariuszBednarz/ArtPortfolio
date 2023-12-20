@@ -22,6 +22,7 @@ const Arts = () => {
   const [year, setYear] = useState(defaultYear);
   const [collection, setCollection] = useState(defaultCol);
   const [type, setType] = useState();
+  const [loading, setLoading] = useState(true);
 
   const handleCheckbox = (value: any) => {
     if (!type || value !== type) {
@@ -55,13 +56,12 @@ const Arts = () => {
         const { data } = await client.query({
           query: gql`
             query MyQuery {
-              arts(locales: ${locale}${query}) {
+              arts(first: 100, locales: ${locale}${query}) {
                id
                 artImage {
                   width
                   id
                   height
-                  mimeType
                   url
                 }
               }
@@ -69,6 +69,8 @@ const Arts = () => {
           `,
           fetchPolicy: "no-cache",
         });
+        console.log(data.arts);
+        setLoading(false);
         setArts(data.arts);
       } catch (error) {
         console.error("Error fetching arts", error);
@@ -102,6 +104,7 @@ const Arts = () => {
         <div className="flex items-center justify-center gap-4 flex-wrap">
           {checkboxes.map((item) => (
             <Checkbox
+              key={item}
               text={item}
               selected={type === item}
               handleCheckbox={handleCheckbox}
@@ -109,7 +112,7 @@ const Arts = () => {
           ))}
         </div>
       </div>
-      <MasonryComponent data={arts} artPage />
+      <MasonryComponent loading={loading} data={arts} artPage />
     </ContentWrapper>
   );
 };
