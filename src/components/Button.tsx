@@ -10,7 +10,7 @@ const Button = ({ text, outlined, themeDisabled }: ButtonProps) => {
   return (
     <button
       className={clsx(
-        "h-10 px-8 rounded-four",
+        "h-10 px-8 rounded-four w-40",
         themeDisabled
           ? clsx(
               !outlined && "bg-white text-dark",

@@ -26,6 +26,7 @@ module.exports = {
         highlight: "#7B9080",
         bright: "#F0EEF2",
         white: "#fff",
+        trans: "#00000000",
       },
       fill: {
         dark: "#30302E",
@@ -33,6 +34,12 @@ module.exports = {
       },
       maxWidth: {
         page: "1366px",
+        bar: "500px",
+        award: "600px",
+      },
+      width: {
+        checkbox: "calc(50% - 8px)",
+        page: "calc(100vw - 12px)",
       },
       minHeight: {
         page: "calc(100vh - 160px)",
@@ -40,6 +47,9 @@ module.exports = {
       },
       height: {
         banner: "300px",
+      },
+      gap: {
+        banner: "10px",
       },
     },
   },

@@ -20,7 +20,7 @@ const Award = ({ data, lastItem }: { data: dataType; lastItem: boolean }) => {
 
   return (
     <div className="bg-brightw-full flex flex-col items-center">
-      <div className={clsx(" px-8 max-w-[600px]", crimson.className)}>
+      <div className={clsx(" px-8 max-w-award", crimson.className)}>
         <h1 className="text-2xl mb-4">{title}</h1>
         <p>{description}</p>
         {lastItem && <Divider />}

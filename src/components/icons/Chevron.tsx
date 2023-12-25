@@ -12,7 +12,7 @@ const Chevron = ({
       className={clsx("fill-dark dark:fill-bright transition-all", {
         "rotate-180": rotate,
         "rotate-0": !rotate,
-        "fill-highlight": selected,
+        "fill-highlight dark:fill-highlight": selected,
       })}
       width="24"
       height="24"

@@ -10,11 +10,13 @@ const Select = ({
   selectedOption,
   setSelectedOption,
   defaultValue,
+  fixed,
 }: {
   options: string[] | number[];
-  selectedOption: any;
-  setSelectedOption: any;
+  selectedOption: string | number;
+  setSelectedOption: React.Dispatch<React.SetStateAction<string | number>>;
   defaultValue: any;
+  fixed?: any;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -50,15 +52,23 @@ const Select = ({
 
   return (
     <div
-      className="relative w-32 md:w-40 h-8 md:h-10 text-xs md:text-base"
+      className={clsx(
+        "relative  h-8 md:h-10 text-xs md:text-base",
+        { "md:w-52": fixed },
+        { "w-full": !fixed }
+      )}
       ref={dropdownRef}
     >
       <button
         className={clsx(
-          "flex items-center justify-between px-4 w-full border border-dark dark:border-white h-full rounded",
+          "flex items-center justify-between px-4 w-full h-full rounded",
           {
-            "text-highlight border-highlight border-2":
+            "text-highlight border-highlight dark:border-highlight border-2":
               selectedOption !== defaultValue,
+          },
+          {
+            "border border-dark dark:border-white":
+              selectedOption === defaultValue,
           }
         )}
         onClick={handleDropdown}
@@ -69,7 +79,7 @@ const Select = ({
         <Chevron rotate={isOpen} selected={selectedOption !== defaultValue} />
       </button>
       {isOpen && (
-        <div className="absolute shadow z-10 w-full max-h-80 overflow-auto bg-white dark:bg-darker border border-dark dark:border-white rounded-[4px]">
+        <div className="absolute shadow z-10 w-full max-h-80 overflow-auto bg-white dark:bg-darker border border-dark dark:border-white rounded">
           <div
             className="px-4 py-2 dark:hover:bg-dark hover:bg-bright cursor-pointer"
             onClick={() => cleanFilter(defaultValue)}

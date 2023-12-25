@@ -38,9 +38,9 @@ const Banner = () => {
           />
         </div>
       </div>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white w-full flex flex-col items-center gap-[10px] px-8">
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white w-full flex flex-col items-center gap-banner px-8">
         <h1 className="text-3xl">Wiesław F. Bednarz</h1>
-        <div className="w-full max-w-[434px] h-1 bg-bright rounded-sm"></div>
+        <div className="w-full max-w-bar h-1 bg-bright rounded-sm"></div>
         <p>Portfolio</p>
         <div className="flex flex-col gap-4 sm:flex-row">
           <NavLink href="/bio">

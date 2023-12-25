@@ -2,8 +2,9 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import clsx from "clsx";
 import Image from "next/image";
 
+import { ContentWrapper, Loading, NoResult } from "@/src/components";
+
 import NavLink from "./layout/Nav/NavLink";
-import ContentWrapper from "@/src/components/ContentWrapper";
 import { GlassIcon } from "./icons";
 
 type artObj = {
@@ -27,13 +28,13 @@ const MasonryComponent = ({
   return (
     <ContentWrapper>
       {loading ? (
-        <h1>Loading</h1>
+        <Loading />
       ) : data?.length === 0 ? (
-        "no results"
+        <NoResult />
       ) : (
         <ResponsiveMasonry
           columnsCountBreakPoints={{ 350: 1, 480: 2, 768: 3 }}
-          className={clsx("py-8", { "py-0": artPage })}
+          className={clsx({ "py-0": artPage }, { "py-8": !artPage })}
         >
           <Masonry gutter="16px">
             {data?.map((art) => (

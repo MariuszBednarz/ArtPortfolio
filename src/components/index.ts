@@ -6,6 +6,8 @@ import LangSwitch from "./LangSwitch";
 import Select from "./Select";
 import ThemeSwitch from "./ThemeSwitch";
 import MasonryComponent from "./Masonry";
+import Loading from "./Loading";
+import NoResult from "./NoResult";
 
 export {
   Button,
@@ -16,4 +18,6 @@ export {
   Select,
   ThemeSwitch,
   MasonryComponent,
+  Loading,
+  NoResult,
 };

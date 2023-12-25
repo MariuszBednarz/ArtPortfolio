@@ -19,8 +19,8 @@ const Arts = () => {
   const defaultCol = "collection";
 
   const [arts, setArts] = useState([]);
-  const [year, setYear] = useState(defaultYear);
-  const [collection, setCollection] = useState(defaultCol);
+  const [year, setYear] = useState<number | string>(defaultYear);
+  const [collection, setCollection] = useState<number | string>(defaultCol);
   const [type, setType] = useState();
   const [loading, setLoading] = useState(true);
 
@@ -85,13 +85,14 @@ const Arts = () => {
 
   return (
     <ContentWrapper>
-      <div className="flex items-center lg:items-start flex-col py-4 gap-4 lg:flex-row">
-        <div className="flex gap-4">
+      <div className="flex items-center lg:items-start flex-col py-4 gap-4 lg:flex-row md:px-8">
+        <div className="flex gap-4 flex-col md:flex-row w-full px-4 md:px-0">
           <Select
             options={years}
             selectedOption={year}
             setSelectedOption={setYear}
             defaultValue={defaultYear}
+            fixed
           />
           <Select
             options={collections}
@@ -100,7 +101,7 @@ const Arts = () => {
             defaultValue={defaultCol}
           />
         </div>
-        <div className="flex items-center justify-center gap-4 flex-wrap">
+        <div className="flex items-center justify-center lg:justify-start gap-4 flex-wrap md:flex-nowrap md:flex-row w-full px-4 md:px-0">
           {checkboxes.map((item) => (
             <Checkbox
               key={item}
