@@ -1,7 +1,7 @@
 {
   "Nav": {
     "home": "Strona główna",
-    "art": "Katalog prac",
+    "art": "Katalog",
     "bio": "Wiesław F. Bednarz",
     "contact": "Kontakt",
     "policy": "Polityka prywatności"
@@ -9,7 +9,7 @@
   "Index": {
     "title": "Witaj świecie!",
     "bio": "Biogram",
-    "art": "Katalog prac"
+    "art": "Katalog"
   },
   "Bio": {
     "profession": "Malarz, rzeźbiarz, performer",
@@ -27,6 +27,8 @@
     "None": "Prace nieujęte w kolekcjach",
     "Well": "Studnie",
     "Stones": "Rzeźby kamienne",
-    "Structures": "Struktury"
+    "Structures": "Struktury",
+    "noResults": "Brak wyników",
+    "noResultsExtended": "Katalog nie zawiera prac spełniających wybrane kryteria"
   }
 }

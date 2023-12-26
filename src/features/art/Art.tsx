@@ -8,13 +8,14 @@ import { useLocale } from "next-intl";
 //TODO:
 //1. Move art/id to features - DONE
 //2. Closing mobile nav on redirect - DONE
-//3. Add art/id page design
-//4. Add no results
-//5. Add Loading
+//3. Add art/id page design -
+//4. Add no results - DONE
+//5. Add Loading - DONE
 //6. SEO
 //7. Analitics
 //8. Filter styles & responsivity - DONE
 //9. "any" types fix
+//10 mobile page-width (scrollbar bug)
 
 type ArtType = {
   art: {

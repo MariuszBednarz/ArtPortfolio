@@ -39,7 +39,7 @@ module.exports = {
       },
       width: {
         checkbox: "calc(50% - 8px)",
-        page: "calc(100vw - 12px)",
+        page: "calc(100vw - 8px)",
       },
       minHeight: {
         page: "calc(100vh - 160px)",
