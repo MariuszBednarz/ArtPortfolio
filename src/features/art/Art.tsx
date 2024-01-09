@@ -1,9 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
-import client from "@/apollo-client";
-import { gql } from "@apollo/client";
 import Image from "next/image";
 import { useLocale } from "next-intl";
+import { gql } from "@apollo/client";
+
+import client from "@/apollo-client";
+
+import { ContentWrapper } from "@/src/components";
 
 //TODO:
 //1. Move art/id to features - DONE
@@ -22,7 +25,11 @@ type ArtType = {
     artTitle: string;
     artImage: {
       url: string;
+      width: number;
+      height: number;
     };
+    artDescription: any;
+    artCollection: string;
   };
 };
 
@@ -32,7 +39,7 @@ export type ArtParams = {
 };
 
 const Art = ({ params }: { params: ArtParams }) => {
-  const [art, setArt] = useState<ArtType>();
+  const [art, setArt] = useState<ArtType | undefined>();
   const locale = useLocale();
 
   useEffect(() => {
@@ -52,7 +59,6 @@ const Art = ({ params }: { params: ArtParams }) => {
                   width
                   id
                   height
-                  mimeType
                   url
                 }
                 artTitle
@@ -71,20 +77,24 @@ const Art = ({ params }: { params: ArtParams }) => {
 
   const { id } = params;
 
+  console.log(art?.art.artDescription);
+  // const { artTitle, artImage, artDescription, artCollection } = art?.art;
   return (
-    <div className="max-w-page w-full">
+    <ContentWrapper>
       <p>{art && art?.art.artTitle}</p>
-      Art nr {id}
+      <div
+        dangerouslySetInnerHTML={{ __html: art?.art.artDescription.html }}
+      ></div>
       {art && (
         <Image
-          src={art.art.artImage.url}
-          width={500}
-          height={500}
+          src={art?.art.artImage.url}
+          width={art?.art.artImage.width}
+          height={art?.art.artImage.height}
           alt=""
-          className="w-full max-w-page"
+          className="w-full object-contain mx-auto"
         />
       )}
-    </div>
+    </ContentWrapper>
   );
 };
 

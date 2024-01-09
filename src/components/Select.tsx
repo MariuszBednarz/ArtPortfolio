@@ -16,7 +16,7 @@ const Select = ({
   selectedOption: string | number;
   setSelectedOption: React.Dispatch<React.SetStateAction<string | number>>;
   defaultValue: any;
-  fixed?: any;
+  fixed?: boolean;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
