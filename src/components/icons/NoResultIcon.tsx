@@ -52,13 +52,13 @@ const NoResultIcon = () => {
         cx="95"
         cy="46"
         r="13"
-        stroke-width="4"
+        strokeWidth="4"
         className="stroke-dark dark:stroke-white"
       />
       <path
         d="M105 56L116 67"
-        stroke-width="4"
-        stroke-linecap="round"
+        strokeWidth="4"
+        strokeLinecap="round"
         className="stroke-dark dark:stroke-white"
       />
     </svg>

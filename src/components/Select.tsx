@@ -15,7 +15,7 @@ const Select = ({
   options: string[] | number[];
   selectedOption: string | number;
   setSelectedOption: React.Dispatch<React.SetStateAction<string | number>>;
-  defaultValue: any;
+  defaultValue: string;
   fixed?: boolean;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,14 +37,17 @@ const Select = ({
   const t = useTranslations("Art");
 
   useEffect(() => {
-    const handleClickOutside = (event: { target: any }) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsOpen(false);
+    const handleClickOutside = (event: MouseEvent) => {
+      if (event.target instanceof Node) {
+        if (
+          dropdownRef.current &&
+          !dropdownRef.current.contains(event.target)
+        ) {
+          setIsOpen(false);
+        }
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
-
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };

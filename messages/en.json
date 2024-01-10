@@ -24,10 +24,10 @@
     "CERAMICS": "Ceramics",
     "PERFORMANCE": "Performances",
     "clean": "Clean filters",
-    "None": "Works not included in collections",
-    "Well": "Well",
-    "Stones": "Stone sculptures",
-    "Structures": "Structures",
+    "NONE": "Works not included in collections",
+    "WELL": "Well",
+    "STONES": "Stone sculptures",
+    "STRUCTURES": "Structures",
     "noResults": "No results",
     "noResultsExtended": "The catalogue does not contain works that meet the selected criteria"
   }

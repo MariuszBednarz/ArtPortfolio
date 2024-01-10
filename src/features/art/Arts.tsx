@@ -1,9 +1,8 @@
 "use client";
-import { gql } from "@apollo/client";
-import { useEffect, useState } from "react";
-import { useLocale } from "next-intl";
 
-import client from "@/apollo-client";
+import useDataFetch from "@/src/hooks/useLogic";
+
+import { YEARS, COLLECTIONS, CHECKBOXES } from "@/src/utils/constants";
 
 import {
   Select,
@@ -13,96 +12,39 @@ import {
 } from "@/src/components";
 
 const Arts = () => {
-  const locale = useLocale();
-
-  const defaultYear = "year";
-  const defaultCol = "collection";
-
-  const [arts, setArts] = useState([]);
-  const [year, setYear] = useState<number | string>(defaultYear);
-  const [collection, setCollection] = useState<number | string>(defaultCol);
-  const [type, setType] = useState();
-  const [loading, setLoading] = useState(true);
-
-  const handleCheckbox = (value: any) => {
-    if (!type || value !== type) {
-      setType(value);
-    } else {
-      setType(undefined);
-    }
-  };
-
-  useEffect(() => {
-    const buildQuery = () => {
-      let filterConditions = [];
-      if (year !== defaultYear) {
-        filterConditions.push(`artYear: ${year}`);
-      }
-      if (collection !== defaultCol) {
-        filterConditions.push(`artCollection: ${collection}`);
-      }
-      if (type) {
-        filterConditions.push(`artType: ${type}`);
-      }
-      if (filterConditions.length == 0) {
-        return "";
-      } else {
-        return `, where: {${filterConditions.join(", ")}}`;
-      }
-    };
-
-    const fetchArts = async (query: string) => {
-      try {
-        const { data } = await client.query({
-          query: gql`
-            query MyQuery {
-              arts(first: 100, locales: ${locale}${query}) {
-               id
-                artImage {
-                  width
-                  id
-                  height
-                  url
-                }
-              }
-            }
-          `,
-          fetchPolicy: "no-cache",
-        });
-        setLoading(false);
-        setArts(data.arts);
-      } catch (error) {
-        console.error("Error fetching arts", error);
-      }
-    };
-    const query = buildQuery();
-    fetchArts(query);
-  }, [year, collection, type]);
-
-  const years = Array.from({ length: 2022 - 1958 + 1 }, (_, i) => i + 1958);
-  const collections = ["None", "Well", "Stones", "Structures"];
-  const checkboxes = ["PAINTING", "SCULPTURE", "PERFORMANCE", "CERAMICS"];
+  const {
+    defaultCol,
+    defaultYear,
+    arts,
+    year,
+    setYear,
+    collection,
+    setCollection,
+    type,
+    loading,
+    handleCheckbox,
+  } = useDataFetch(false);
 
   return (
     <ContentWrapper>
       <div className="flex items-center lg:items-start flex-col py-4 gap-4 lg:flex-row md:px-8">
         <div className="flex gap-4 flex-col md:flex-row w-full px-4 md:px-0">
           <Select
-            options={years}
+            options={YEARS}
             selectedOption={year}
             setSelectedOption={setYear}
             defaultValue={defaultYear}
             fixed
           />
           <Select
-            options={collections}
+            options={COLLECTIONS}
             selectedOption={collection}
             setSelectedOption={setCollection}
             defaultValue={defaultCol}
           />
         </div>
         <div className="flex items-center justify-center lg:justify-start gap-4 flex-wrap md:flex-nowrap md:flex-row w-full px-4 md:px-0">
-          {checkboxes.map((item) => (
+          {CHECKBOXES.map((item) => (
             <Checkbox
               key={item}
               text={item}

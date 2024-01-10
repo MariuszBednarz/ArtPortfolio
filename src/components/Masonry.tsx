@@ -7,14 +7,7 @@ import { ContentWrapper, Loading, NoResult } from "@/src/components";
 import NavLink from "./layout/Nav/NavLink";
 import { GlassIcon } from "./icons";
 
-type artObj = {
-  id: string;
-  artImage: {
-    url: string;
-    width: number;
-    height: number;
-  };
-};
+import { artObj } from "../hooks/useLogic";
 
 const MasonryComponent = ({
   loading,

@@ -1,55 +1,16 @@
 "use client";
-import { useState, useEffect } from "react";
-import { useLocale } from "next-intl";
-import { gql } from "@apollo/client";
-
-import client from "@/apollo-client";
-
 import { MasonryComponent } from "@/src/components";
 import Banner from "./Banner";
 
+import useDataFetch from "@/src/hooks/useLogic";
+
 const Home = () => {
-  const [arts, setArts] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  const locale = useLocale();
-
-  useEffect(() => {
-    const fetchArts = async () => {
-      try {
-        const { data } = await client.query({
-          query: gql`
-            query MyQuery {
-              arts(first: 100, locales: ${locale}) {
-                id
-                artImage {
-                  width
-                  id
-                  height
-                  mimeType
-                  url
-                }
-              }
-            }
-          `,
-          fetchPolicy: "no-cache",
-        });
-        const arr = data.arts.sort(() => Math.random() - 0.5);
-        const firstTen = arr.slice(0, 10);
-        setLoading(false);
-        setArts(firstTen);
-      } catch (error) {
-        console.error("Error fetching arts", error);
-      }
-    };
-
-    fetchArts();
-  }, []);
+  const { overview, loading } = useDataFetch(true);
 
   return (
     <div>
       <Banner />
-      <MasonryComponent loading={loading} data={arts} />
+      <MasonryComponent loading={loading} data={overview} />
     </div>
   );
 };
