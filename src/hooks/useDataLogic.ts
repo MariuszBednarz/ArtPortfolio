@@ -30,7 +30,7 @@ export type artObj = {
   };
 };
 
-const useDataFetch = (isOverview?: boolean, params?: ArtParams) => {
+const useDataLogic = (isOverview?: boolean, params?: ArtParams) => {
   const locale = useLocale();
 
   const defaultYear = "year";
@@ -163,4 +163,4 @@ const useDataFetch = (isOverview?: boolean, params?: ArtParams) => {
   };
 };
 
-export default useDataFetch;
+export default useDataLogic;

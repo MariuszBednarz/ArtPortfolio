@@ -3,6 +3,8 @@ import React, { useState, useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { clsx } from "clsx";
 
+import useSelectLogic from "../hooks/useSelectLogic";
+
 import { Chevron } from "./icons";
 
 const Select = ({
@@ -18,40 +20,15 @@ const Select = ({
   defaultValue: string;
   fixed?: boolean;
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const dropdownRef = useRef<HTMLDivElement>(null);
-
-  const handleDropdown = () => setIsOpen(!isOpen);
-
-  const handleOptionClick = (option: string | number) => {
-    setSelectedOption(option);
-    setIsOpen(false);
-  };
-
-  const cleanFilter = (defaultValue: string) => {
-    setSelectedOption(defaultValue);
-    setIsOpen(false);
-  };
-
   const t = useTranslations("Art");
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (event.target instanceof Node) {
-        if (
-          dropdownRef.current &&
-          !dropdownRef.current.contains(event.target)
-        ) {
-          setIsOpen(false);
-        }
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [dropdownRef]);
+  const {
+    dropdownRef,
+    isOpen,
+    handleDropdown,
+    cleanFilter,
+    handleOptionClick,
+  } = useSelectLogic(setSelectedOption);
 
   return (
     <div

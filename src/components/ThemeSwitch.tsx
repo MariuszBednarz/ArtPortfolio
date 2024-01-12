@@ -1,25 +1,11 @@
 "use client";
 import clsx from "clsx";
-import { useState, useEffect } from "react";
-import { useTheme } from "next-themes";
 
 import { MoonIcon, SunIcon } from "./icons";
 
+import useThemeLogic from "../hooks/useThemeLogic";
 const Switch = () => {
-  const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
-
-  const handleSwitch = (theme: string | undefined) => {
-    if (theme === "light") {
-      setTheme("dark");
-    } else if (theme === "dark") {
-      setTheme("light");
-    }
-  };
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const { theme, mounted, handleSwitch } = useThemeLogic();
 
   if (!mounted) {
     return null;

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import { ContentWrapper } from "@/src/components";
 
-import useDataFetch from "@/src/hooks/useLogic";
+import useDataLogic from "@/src/hooks/useDataLogic";
 
 //DONE:
 //1. Move art/id to features - DONE
@@ -14,14 +14,14 @@ import useDataFetch from "@/src/hooks/useLogic";
 //6. SEO - DONE
 //8. Filter styles & responsivity - DONE
 //11. fetch logic moved to hooks - DONE
-// "any" types fix
+// "any" types fix - DONE
+// mobile page-width (scrollbar bug) - DONE
+// Small components logic - move to custom hooks
 
 //TODO:
-// mobile page-width (scrollbar bug)
 // Analitics
 // Add art/id page design
 // Favicon
-// Small components logic - move to custom hook
 
 export type ArtParams = {
   locale: string;
@@ -29,7 +29,7 @@ export type ArtParams = {
 };
 
 const Art = ({ params }: { params: ArtParams }) => {
-  const { art } = useDataFetch(false, params);
+  const { art } = useDataLogic(false, params);
   // const { artTitle, artImage, artDescription, artCollection } = art?.art;
   return (
     <ContentWrapper>

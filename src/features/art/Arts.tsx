@@ -1,6 +1,6 @@
 "use client";
 
-import useDataFetch from "@/src/hooks/useLogic";
+import useDataLogic from "@/src/hooks/useDataLogic";
 
 import { YEARS, COLLECTIONS, CHECKBOXES } from "@/src/utils/constants";
 
@@ -23,7 +23,7 @@ const Arts = () => {
     type,
     loading,
     handleCheckbox,
-  } = useDataFetch(false);
+  } = useDataLogic(false);
 
   return (
     <ContentWrapper>

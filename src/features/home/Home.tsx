@@ -2,10 +2,10 @@
 import { MasonryComponent } from "@/src/components";
 import Banner from "./Banner";
 
-import useDataFetch from "@/src/hooks/useLogic";
+import useDataLogic from "@/src/hooks/useDataLogic";
 
 const Home = () => {
-  const { overview, loading } = useDataFetch(true);
+  const { overview, loading } = useDataLogic(true);
 
   return (
     <div>

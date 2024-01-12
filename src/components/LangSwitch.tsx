@@ -1,26 +1,12 @@
 "use client";
 import clsx from "clsx";
-import { useState, useEffect } from "react";
-import { useLocale } from "next-intl";
 
-import { useRouter, usePathname } from "@/src/navigation";
+import useLangLogic from "../hooks/useLangLogic";
+
 import { ENIcon, PLIcon } from "./icons";
 
 const LangSwitch = () => {
-  const [mounted, setMounted] = useState(false);
-
-  const locale = useLocale();
-  const pathname = usePathname();
-  const router = useRouter();
-
-  const handleSwitch = () => {
-    if (locale === "pl") router.replace(pathname, { locale: "en" });
-    if (locale === "en") router.replace(pathname, { locale: "pl" });
-  };
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const { mounted, handleSwitch, locale } = useLangLogic();
 
   if (!mounted) {
     return null;
