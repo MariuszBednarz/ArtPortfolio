@@ -33,6 +33,10 @@ export const pathnames = {
     en: "/art/",
     pl: "/art/",
   },
+  "/policy": {
+    en: "/policy",
+    pl: "/policy",
+  },
 } satisfies Pathnames<typeof locales>;
 
 export type AppPathnames = keyof typeof pathnames;

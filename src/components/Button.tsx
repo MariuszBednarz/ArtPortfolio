@@ -4,11 +4,13 @@ type ButtonProps = {
   text: string;
   outlined?: boolean;
   themeDisabled?: boolean;
+  onClick?: () => void;
 };
 
-const Button = ({ text, outlined, themeDisabled }: ButtonProps) => {
+const Button = ({ text, outlined, themeDisabled, onClick }: ButtonProps) => {
   return (
     <button
+      onClick={onClick}
       className={clsx(
         "h-10 px-8 rounded-four w-40",
         themeDisabled

@@ -4,7 +4,10 @@
     "art": "Katalog",
     "bio": "Wiesław F. Bednarz",
     "contact": "Kontakt",
-    "policy": "Polityka prywatności"
+    "policy": "Polityka cookies",
+    "info": "Ta strona używa Cookies - ",
+    "allow": "Zezwól",
+    "decline": "Odmów"
   },
   "Index": {
     "title": "Witaj świecie!",
@@ -30,5 +33,17 @@
     "STRUCTURES": "Struktury",
     "noResults": "Brak wyników",
     "noResultsExtended": "Katalog nie zawiera prac spełniających wybrane kryteria"
+  },
+  "Policy": {
+    "cookie": "Pliki Cookies",
+    "cookieDescription": "Gdy korzystasz z witryny, gromadzimy informacje o Twojej aktywności. W tym celu stosujemy pliki cookies. Zawierają one informacje które są umieszczone w Twoim urządzeniu końcowym - przeglądarce internetowej. Instalowanie plików cookies nie powoduje zmian w Twoim urządzeniu ani w oprogramowaniu zainstalowanym na tym urządzniu. Stosujemy tylko pliki sesyjne, które są usuwamy po zakończeniu sesji, której trwanie zależy od ustawień Twojej przeglądarki.",
+    "usage": "Do czego stosujemy cookies?",
+    "usageDescription": "Stosujemy pliki cookies do optymalizacji strony, dostosowania do oczekiwań internautów oraz ułatwienia przeglądania zawartości z różnych urządzeń.",
+    "consent": "Możesz nie wyrazić zgody na użycie cookies za pomcą ustawień swojej przegldarki",
+    "consentDescription": "W każdej chwili możesz zmodyfikować ustawienia przeglądarki, by zapobiec instalacji plików cookies na Twoim urządzeniu. Istnieje też możliwość samodzielnego usunięcia już zapisanych cookies, ale ograniczenie ich użycia może wpłynąć na funkcjonalność strony.",
+    "tools": "Wykorzystujemy narzędzia podmiotu zewnętrznego - Google Inc.",
+    "toolsDescription": "Na stronie zastosowaliśmy narzędzie Google Analytics do analizy ruchu oraz aktywności dotyczących jej przeglądania. Dane statystyczne służą do optymalizacji i rozwoju aplikacji.",
+    "more": "Więcej informacji możesz uzyskać tutaj: ",
+    "optout": "Ponad to, możesz zastosować oprogramowanie dzięki któremu Google Analytics nie będzie stosowane na witrynie: "
   }
 }

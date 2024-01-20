@@ -8,6 +8,8 @@ import ThemeSwitch from "./ThemeSwitch";
 import MasonryComponent from "./Masonry";
 import Loading from "./Loading";
 import NoResult from "./NoResult";
+import Layout from "./layout/Layout";
+import GoogleAnalytics from "./GoogleAnalytics";
 
 export {
   Button,
@@ -20,4 +22,6 @@ export {
   MasonryComponent,
   Loading,
   NoResult,
+  Layout,
+  GoogleAnalytics,
 };

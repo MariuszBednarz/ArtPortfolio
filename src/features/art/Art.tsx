@@ -16,10 +16,12 @@ import useDataLogic from "@/src/hooks/useDataLogic";
 //11. fetch logic moved to hooks - DONE
 // "any" types fix - DONE
 // mobile page-width (scrollbar bug) - DONE
-// Small components logic - move to custom hooks
+// Small components logic - move to custom hooks - DONE
+// Analytics - DONE
+// Cookie Policy subpage - DONE
 
 //TODO:
-// Analitics
+// Analitics - button design
 // Add art/id page design
 // Favicon
 

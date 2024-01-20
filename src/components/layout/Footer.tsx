@@ -21,7 +21,7 @@ const Footer = () => {
             <a href="mailto:mmbednarz90@gmail.com">{t("contact")}</a>
           </li>
           <li>
-            <NavLink href={"/"}>{t("policy")}</NavLink>
+            <NavLink href={"/policy"}>{t("policy")}</NavLink>
           </li>
         </ul>
       </div>

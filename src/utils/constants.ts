@@ -4,3 +4,6 @@ export const YEARS = Array.from(
 );
 export const COLLECTIONS = ["NONE", "WELL", "STONES", "STRUCTURES"];
 export const CHECKBOXES = ["PAINTING", "SCULPTURE", "PERFORMANCE", "CERAMICS"];
+export const ANALYTICS =
+  "https://policies.google.com/technologies/partner-sites";
+export const OPT_OUT = "https://tools.google.com/dlpage/gaoptout";

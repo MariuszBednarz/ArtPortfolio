@@ -4,6 +4,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { Lexend } from "next/font/google";
 
 import Layout from "@/src/components/layout/Layout";
+import CookieBanner from "@/src/components/CookieBanner";
+import GoogleAnalytics from "@/src/components/GoogleAnalytics";
 
 import "./globals.css";
 
@@ -17,6 +19,8 @@ export const metadata: Metadata = {
   keywords:
     "Wiesław Bednarz, portfolio, malarz, prace, obrazy, rzeźba, performance, kolekcja, dzieła, sztuki, stal, kamień, sztuka",
 };
+
+const ga = process.env.NEXT_GA_MEASUREMENT_ID;
 
 const RootLayout = async ({
   children,
@@ -34,9 +38,13 @@ const RootLayout = async ({
 
   return (
     <html lang={locale}>
+      <GoogleAnalytics GA_MEASUREMENT_ID={ga} />
       <body className={lexend.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <Layout>{children}</Layout>
+          <Layout>
+            {children}
+            <CookieBanner />
+          </Layout>
         </NextIntlClientProvider>
       </body>
     </html>

@@ -19,7 +19,7 @@ const Award = ({ data, lastItem }: { data: dataType; lastItem: boolean }) => {
   const { title, description } = data;
 
   return (
-    <div className="bg-brightw-full flex flex-col items-center">
+    <div className="w-full flex flex-col items-center">
       <div className={clsx(" px-8 max-w-award", crimson.className)}>
         <h1 className="text-2xl mb-4">{title}</h1>
         <p>{description}</p>

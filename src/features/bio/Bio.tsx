@@ -6,7 +6,7 @@ import { Crimson_Text } from "next/font/google";
 import Divider from "@/src/components/Divider";
 import ContentWrapper from "@/src/components/ContentWrapper";
 import placeholder from "@/public/placeholder.jpg";
-import Award from "./Award";
+import Award from "@/src/components/Award";
 
 const crimson = Crimson_Text({
   weight: "400",
