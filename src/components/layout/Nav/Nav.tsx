@@ -28,7 +28,7 @@ const Nav = () => {
         </div>
         <div
           className={clsx(
-            "bg-white dark:bg-dark shadow-md absolute mt-20 px-4 py-8 w-full top-0 left-0 block md:hidden transform transition duration-300 ease-in-out z-10",
+            "bg-white dark:bg-dark shadow-md absolute mt-20 px-4 py-8 w-full top-0 left-0 block md:hidden transform transition duration-300 ease-in-out z-20",
             {
               "": isOpen,
               "opacity-0 -translate-x-full": !isOpen,

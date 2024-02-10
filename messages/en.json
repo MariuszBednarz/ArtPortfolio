@@ -45,5 +45,9 @@
     "toolsDescription": "On the website, we have implemented Google Analytics tools for traffic analysis and browsing activity. Statistical data is used for optimization and development of the application.",
     "more": "You can find more information here: ",
     "optout": "Additionally, you can use software to prevent Google Analytics from being used on the website: "
+  },
+  "Details": {
+    "reveal": "Details",
+    "hide": "Hide"
   }
 }

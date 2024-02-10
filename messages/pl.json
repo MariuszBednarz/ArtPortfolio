@@ -45,5 +45,9 @@
     "toolsDescription": "Na stronie zastosowaliśmy narzędzie Google Analytics do analizy ruchu oraz aktywności dotyczących jej przeglądania. Dane statystyczne służą do optymalizacji i rozwoju aplikacji.",
     "more": "Więcej informacji możesz uzyskać tutaj: ",
     "optout": "Ponad to, możesz zastosować oprogramowanie dzięki któremu Google Analytics nie będzie stosowane na witrynie: "
+  },
+  "Details": {
+    "reveal": "Szczegóły",
+    "hide": "Zwiń"
   }
 }

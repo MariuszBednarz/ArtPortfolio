@@ -5,6 +5,7 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/features/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -40,10 +41,14 @@ module.exports = {
       width: {
         checkbox: "calc(50% - 8px)",
         page: "calc(100vw - 8px)",
+        mobilePage: "calc(100vw - 8px)",
       },
       minHeight: {
         page: "calc(100vh - 160px)",
         mobilePage: "calc(100vh - 272px)",
+      },
+      maxHeight: {
+        page: "calc(100vh - 160px)",
       },
       height: {
         banner: "300px",

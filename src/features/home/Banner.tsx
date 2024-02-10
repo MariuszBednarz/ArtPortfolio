@@ -44,10 +44,10 @@ const Banner = () => {
         <p>Portfolio</p>
         <div className="flex flex-col gap-4 sm:flex-row">
           <NavLink href="/bio">
-            <Button text={t("bio")} />
+            <Button type="filled" text={t("bio")} />
           </NavLink>
           <NavLink href="/art">
-            <Button text={t("art")} outlined themeDisabled />
+            <Button text={t("art")} type="outlined" themeDisabled />
           </NavLink>
         </div>
       </div>

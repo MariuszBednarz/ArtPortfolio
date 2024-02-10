@@ -9,7 +9,7 @@
 
 ::-webkit-scrollbar-track {
   position: relative;
-  background: rgba(241, 241, 241, 0); /* color of the tracking area */
+  background: #30302e; /* color of the tracking area */
 }
 
 ::-webkit-scrollbar-thumb {
@@ -22,13 +22,13 @@
   background: #555; /* color of the scroll thumb when hovering */
 }
 
-/* For Firefox: */
+/* For Firefox:
 * {
-  scrollbar-width: thin; /* "auto" or "thin" */
-  scrollbar-color: #888 #f1f1f1; /* thumb and track color */
+  scrollbar-width: thin; "auto" or "thin"
+  scrollbar-color: #888 #f1f1f1; thumb and track color
 }
 
-/* For IE and Edge */
+For IE and Edge
 * {
   -ms-overflow-style: -ms-autohiding-scrollbar;
-}
+} */

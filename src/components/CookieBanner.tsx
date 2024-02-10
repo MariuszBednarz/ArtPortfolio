@@ -34,12 +34,12 @@ export default function CookieBanner() {
   }, [cookieConsent]);
   return (
     <div
-      className={`my-10 mx-auto max-w-max md:max-w-screen-sm ${
+      className={`my-10 mx-auto max-w-max md:max-w-screen-sm shadow-xl ${
         cookieConsent != null ? "hidden" : "flex"
       } 
                         fixed bottom-0 left-0 right-0 
                         flex px-3 md:px-4 py-3 justify-between items-center flex-col sm:flex-row gap-4  
-                         bg-bright dark:bg-dark rounded-lg shadow `}
+                         bg-bright dark:bg-dark rounded-lg shadow`}
     >
       <div className="text-center text-dark dark:text-bright">
         {t("info")}
@@ -50,12 +50,12 @@ export default function CookieBanner() {
 
       <div className="flex gap-2">
         <Button
-          outlined
+          type="outlined"
           onClick={() => setCookieConsent(false)}
           text={t("decline")}
         ></Button>
         <Button
-          outlined
+          type="cookie"
           onClick={() => setCookieConsent(true)}
           text={t("allow")}
         ></Button>
