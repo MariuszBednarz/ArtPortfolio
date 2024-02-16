@@ -23,10 +23,11 @@ import useDataLogic from "@/src/hooks/useDataLogic";
 // Analytics - DONE
 // Cookie Policy subpage - DONE
 // Add art/id page design
+// Analitics - button design
 
 //TODO:
-// Analitics - button design
 // Favicon
+//global refactor
 
 export type ArtParams = {
   locale: string;
@@ -54,12 +55,12 @@ const Art = ({ params }: { params: ArtParams }) => {
       </div>
       <div
         className={clsx(
-          " top-[152px] md:top-[80px] transition-all absolute opacity-70 w-full min-h-auto sm:min-h-[calc(100vh-160px)] md:min-h-[calc(100vh-88px)] md:w-[30%] min-w-[200px] p-4 pl-8 dark:bg-darker bg-bright",
+          " top-sidebar md:top-20 transition-all absolute opacity-70 w-full min-h-auto sm:min-h-page md:min-h-sidebar md:w-third min-w-sidebar px-8 py-4 dark:bg-darker bg-bright",
           { "left-0": open },
-          { "left-[-100%] ": !open }
+          { "left-[-100%]": !open }
         )}
       >
-        <h1 className="text-xxl my-4">{art && art?.art.artTitle}</h1>
+        <h1 className="text-xxl my-8">{art && art?.art.artTitle}</h1>
         {art && (
           <div
             dangerouslySetInnerHTML={{
@@ -76,7 +77,7 @@ const Art = ({ params }: { params: ArtParams }) => {
             height={art?.art.artImage.height}
             alt=""
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="w-full h-full max-h-[calc(100vh-160px)] object-contain"
+            className="w-full h-full max-h-page object-contain"
           />
         </div>
       )}

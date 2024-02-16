@@ -33,19 +33,26 @@ module.exports = {
         dark: "#30302E",
         bright: "#F0EEF2",
       },
+      minWidth: {
+        sidebar: "200px",
+        noResult: "240px",
+      },
       maxWidth: {
         page: "1366px",
         bar: "500px",
         award: "600px",
+        noResult: "600px",
       },
       width: {
         checkbox: "calc(50% - 8px)",
         page: "calc(100vw - 8px)",
         mobilePage: "calc(100vw - 8px)",
+        third: "33%",
       },
       minHeight: {
         page: "calc(100vh - 160px)",
         mobilePage: "calc(100vh - 272px)",
+        sidebar: "calc(100vh - 88px)",
       },
       maxHeight: {
         page: "calc(100vh - 160px)",
@@ -55,6 +62,9 @@ module.exports = {
       },
       gap: {
         banner: "10px",
+      },
+      top: {
+        sidebar: "152px",
       },
     },
   },
