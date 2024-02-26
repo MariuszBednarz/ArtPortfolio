@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { Crimson_Text } from "next/font/google";
+import { Tenor_Sans } from "next/font/google";
 
 import Divider from "@/src/components/Divider";
 
@@ -9,7 +9,7 @@ type dataType = {
   description: string;
 };
 
-const crimson = Crimson_Text({
+const crimson = Tenor_Sans({
   weight: "400",
   subsets: ["latin"],
   display: "swap",

@@ -1,14 +1,14 @@
 import Image from "next/image";
 import clsx from "clsx";
 import { useTranslations } from "next-intl";
-import { Crimson_Text } from "next/font/google";
+import { Tenor_Sans } from "next/font/google";
 
 import Divider from "@/src/components/Divider";
 import ContentWrapper from "@/src/components/ContentWrapper";
 import placeholder from "@/public/placeholder.jpg";
 import Award from "@/src/components/Award";
 
-const crimson = Crimson_Text({
+const crimson = Tenor_Sans({
   weight: "400",
   subsets: ["latin"],
   display: "swap",

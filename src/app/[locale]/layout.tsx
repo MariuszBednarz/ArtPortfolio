@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
-import { Lexend } from "next/font/google";
+import { Tenor_Sans } from "next/font/google";
 
 import Layout from "@/src/components/layout/Layout";
 import CookieBanner from "@/src/components/CookieBanner";
@@ -9,7 +9,11 @@ import GoogleAnalytics from "@/src/components/GoogleAnalytics";
 
 import "./globals.css";
 
-const lexend = Lexend({ weight: "400", subsets: ["latin"], display: "swap" });
+const lexend = Tenor_Sans({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title:

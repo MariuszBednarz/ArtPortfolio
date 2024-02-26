@@ -24,10 +24,15 @@ import useDataLogic from "@/src/hooks/useDataLogic";
 // Cookie Policy subpage - DONE
 // Add art/id page design
 // Analitics - button design
+// Favicon
 
 //TODO:
-// Favicon
-//global refactor
+
+//font opacity (desc)
+//opacity 70 -> 80 done
+//desc font bigger
+//button borders soften
+//divider thinner
 
 export type ArtParams = {
   locale: string;
@@ -55,14 +60,15 @@ const Art = ({ params }: { params: ArtParams }) => {
       </div>
       <div
         className={clsx(
-          " top-sidebar md:top-20 transition-all absolute opacity-70 w-full min-h-auto sm:min-h-page md:min-h-sidebar md:w-third min-w-sidebar px-8 py-4 dark:bg-darker bg-bright",
+          " top-sidebar md:top-20 transition-all absolute opacity-80 w-full min-h-auto sm:min-h-page md:min-h-sidebar md:w-third min-w-sidebar px-8 py-4 dark:bg-darker bg-bright",
           { "left-0": open },
           { "left-[-100%]": !open }
         )}
       >
-        <h1 className="text-xxl my-8">{art && art?.art.artTitle}</h1>
+        <h1 className="text-2xl my-8">{art && art?.art.artTitle}</h1>
         {art && (
           <div
+            className="text-xxl"
             dangerouslySetInnerHTML={{
               __html: art.art.artDescription.html,
             }}
