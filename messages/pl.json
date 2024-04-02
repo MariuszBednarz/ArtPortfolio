@@ -32,7 +32,8 @@
     "STONES": "Rzeźby kamienne",
     "STRUCTURES": "Struktury",
     "noResults": "Brak wyników",
-    "noResultsExtended": "Katalog nie zawiera prac spełniających wybrane kryteria"
+    "noResultsExtended": "Katalog nie zawiera prac spełniających wybrane kryteria",
+    "noDate": "brak daty"
   },
   "Policy": {
     "cookie": "Pliki Cookies",

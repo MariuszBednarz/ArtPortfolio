@@ -30,32 +30,35 @@ const MasonryComponent = ({
           className={clsx({ "py-0": artPage }, { "py-8": !artPage })}
         >
           <Masonry gutter="16px">
-            {data?.map((art) => (
-              <div key={art.id}>
-                {artPage ? (
-                  // @ts-ignore
-                  <NavLink href={`/art/${art?.id}`}>
-                    <GlassIcon />
-                    <Image
-                      src={art.artImage.url}
-                      sizes="100vw"
-                      alt=""
-                      className="w-full"
-                      height={art.artImage.height}
-                      width={art.artImage.width}
-                    />
-                  </NavLink>
-                ) : (
-                  <Image
-                    src={art.artImage.url}
-                    alt=""
-                    className="w-full"
-                    height={art.artImage.height}
-                    width={art.artImage.width}
-                  />
-                )}
-              </div>
-            ))}
+            {data?.map(
+              (art) =>
+                art && (
+                  <div key={art.id}>
+                    {artPage ? (
+                      // @ts-ignore
+                      <NavLink href={`/art/${art?.id}`}>
+                        <GlassIcon />
+                        <Image
+                          src={art.artImage?.url}
+                          sizes="100vw"
+                          alt=""
+                          className="w-full"
+                          height={art.artImage?.height}
+                          width={art.artImage?.width}
+                        />
+                      </NavLink>
+                    ) : (
+                      <Image
+                        src={art.artImage?.url}
+                        alt=""
+                        className="w-full"
+                        height={art.artImage?.height}
+                        width={art.artImage?.width}
+                      />
+                    )}
+                  </div>
+                )
+            )}
           </Masonry>
         </ResponsiveMasonry>
       )}

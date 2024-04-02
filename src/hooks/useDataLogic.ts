@@ -92,7 +92,11 @@ const useDataLogic = (isOverview?: boolean, params?: ArtParams) => {
     const buildQuery = () => {
       let filterConditions = [];
       if (year !== defaultYear) {
-        filterConditions.push(`artYear: ${year}`);
+        if (year === "noDate") {
+          filterConditions.push(`artYear: null`);
+        } else {
+          filterConditions.push(`artYear: ${year}`);
+        }
       }
       if (collection !== defaultCol) {
         filterConditions.push(`artCollection: ${collection}`);

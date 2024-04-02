@@ -2,7 +2,7 @@
   "Nav": {
     "home": "Main page",
     "art": "Catalogue",
-    "bio": "bio",
+    "bio": "Bio",
     "contact": "Contact",
     "policy": "Cookies policy",
     "info": "This page uses Cookies - ",
@@ -32,7 +32,8 @@
     "STONES": "Stone sculptures",
     "STRUCTURES": "Structures",
     "noResults": "No results",
-    "noResultsExtended": "The catalogue does not contain works that meet the selected criteria"
+    "noResultsExtended": "The catalogue does not contain works that meet the selected criteria",
+    "noDate": "no date"
   },
   "Policy": {
     "cookie": "Cookies",

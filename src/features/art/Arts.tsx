@@ -24,7 +24,6 @@ const Arts = () => {
     loading,
     handleCheckbox,
   } = useDataLogic(false);
-
   return (
     <ContentWrapper>
       <div className="flex items-center lg:items-start flex-col py-4 gap-4 lg:flex-row md:px-8">

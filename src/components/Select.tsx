@@ -14,7 +14,7 @@ const Select = ({
   defaultValue,
   fixed,
 }: {
-  options: string[] | number[];
+  options: string[] | (number | string)[];
   selectedOption: string | number;
   setSelectedOption: React.Dispatch<React.SetStateAction<string | number>>;
   defaultValue: string;
