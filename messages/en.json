@@ -16,8 +16,8 @@
   },
   "Bio": {
     "profession": "Painter, sculptor, performer",
-    "awardTitle": "Awards and disctinctions",
-    "awardDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    "bioTitle": "Bio",
+    "bioDescription": "Studied at the Institute of Art Education at the Maria Curie-Skłodowska University in Lublin. Graduated with a diploma in sculpture under Prof. Sławomir Mieleszko in 1990. Practiced easel painting, printmaking, sculpture, and interdisciplinary activities."
   },
   "Art": {
     "year": "Year",

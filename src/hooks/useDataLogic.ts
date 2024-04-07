@@ -137,6 +137,7 @@ const useDataLogic = (isOverview?: boolean, params?: ArtParams) => {
               }
             }
           `,
+          fetchPolicy: "no-cache",
         });
         setArt(data);
       } catch (error) {

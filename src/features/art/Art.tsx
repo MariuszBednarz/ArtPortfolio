@@ -9,30 +9,10 @@ import { ContentWrapper, Button } from "@/src/components";
 
 import useDataLogic from "@/src/hooks/useDataLogic";
 
-//DONE:
-//1. Move art/id to features - DONE
-//2. Closing mobile nav on redirect - DONE
-//4. Add no results - DONE
-//5. Add Loading - DONE
-//6. SEO - DONE
-//8. Filter styles & responsivity - DONE
-//11. fetch logic moved to hooks - DONE
-// "any" types fix - DONE
-// mobile page-width (scrollbar bug) - DONE
-// Small components logic - move to custom hooks - DONE
-// Analytics - DONE
-// Cookie Policy subpage - DONE
-// Add art/id page design
-// Analitics - button design
-// Favicon
-
 //TODO:
 
 //font opacity (desc)
-//opacity 70 -> 80 done
-//desc font bigger
 //button borders soften
-//divider thinner
 
 export type ArtParams = {
   locale: string;
@@ -68,7 +48,7 @@ const Art = ({ params }: { params: ArtParams }) => {
         <h1 className="text-2xl my-8">{art && art?.art.artTitle}</h1>
         {art && (
           <div
-            className="text-xxl"
+            className="text-lg"
             dangerouslySetInnerHTML={{
               __html: art.art.artDescription.html,
             }}

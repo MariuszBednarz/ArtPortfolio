@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import clsx from "clsx";
 import { useTranslations } from "next-intl";
@@ -5,8 +6,11 @@ import { Tenor_Sans } from "next/font/google";
 
 import Divider from "@/src/components/Divider";
 import ContentWrapper from "@/src/components/ContentWrapper";
-import placeholder from "@/public/placeholder.jpg";
+import portrait from "@/public/Bednarz-Wieslaw.jpg";
 import Award from "@/src/components/Award";
+
+import useBioLogic from "@/src/hooks/useBioLogic";
+import { Loading } from "@/src/components";
 
 const crimson = Tenor_Sans({
   weight: "400",
@@ -17,23 +21,15 @@ const crimson = Tenor_Sans({
 const Bio = () => {
   const t = useTranslations("Bio");
 
-  const content = [
-    {
-      nr: 1,
-      title: t("awardTitle"),
-      description: t("awardDescription"),
-    },
-    {
-      nr: 2,
-      title: t("awardTitle"),
-      description: t("awardDescription"),
-    },
-    {
-      nr: 3,
-      title: t("awardTitle"),
-      description: t("awardDescription"),
-    },
-  ];
+  const { bio, loading } = useBioLogic();
+
+  const data = {
+    title: t("bioTitle"),
+    description: t("bioDescription"),
+  };
+
+  console.log(bio, loading);
+
   return (
     <>
       <ContentWrapper>
@@ -45,20 +41,18 @@ const Bio = () => {
             <p>{t("profession")}</p>
           </div>
           <div className="w-full md:w-1/2">
-            <Image src={placeholder} alt="portret" />
+            <Image src={portrait} alt="portret" />
           </div>
         </div>
       </ContentWrapper>
       <div className="py-8 bg-bright dark:bg-dark">
-        {content.map((item, index) => {
-          return (
-            <Award
-              key={item.nr}
-              data={item}
-              lastItem={index !== content.length - 1}
-            />
-          );
-        })}
+        {/* {loading ? "loading" : JSON.stringify(bio.expos[0].expo)} */}
+        <Award data={data} lastItem />
+        {loading ? (
+          <Loading />
+        ) : (
+          <Award data={{ title: "Wystawy", description: bio.expos }} lastItem />
+        )}
       </div>
     </>
   );
