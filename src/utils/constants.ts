@@ -1,9 +1,9 @@
 export const YEARS = [
   "noDate",
-  ...Array.from({ length: 2022 - 1958 + 1 }, (_, i) => i + 1958),
+  ...Array.from({ length: 2022 - 1983 + 1 }, (_, i) => i + 1983),
 ];
 
-export const COLLECTIONS = ["NONE", "WELL", "STONES", "STRUCTURES"];
+export const COLLECTIONS = ["NONE", "WELL"];
 export const CHECKBOXES = ["PAINTING", "SCULPTURE", "PERFORMANCE", "CERAMICS"];
 export const ANALYTICS =
   "https://policies.google.com/technologies/partner-sites";
