@@ -28,8 +28,6 @@ const Bio = () => {
     description: t("bioDescription"),
   };
 
-  console.log(bio, loading);
-
   return (
     <>
       <ContentWrapper>

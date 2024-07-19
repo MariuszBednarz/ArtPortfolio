@@ -14,7 +14,7 @@ const Footer = () => {
               href={"https://www.linkedin.com/in/mariusz-bednarz-89a092123/"}
               target="_blank"
             >
-              &copy; 2023 Mariusz Bednarz
+              &copy; 2024 Mariusz Bednarz
             </a>
           </li>
           <li>
