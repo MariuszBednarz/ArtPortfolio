@@ -1,5 +1,3 @@
-import { Metadata } from "next";
-
 import { getMeta } from "@/src/utils/getMeta";
 
 import Art, { ArtParams } from "@/src/features/art/Art";
