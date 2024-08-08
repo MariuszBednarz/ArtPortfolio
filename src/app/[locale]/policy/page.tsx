@@ -1,7 +1,7 @@
-import Policy from "@/src/features/policy/Policy";
-
-const PolicyPage = () => {
-  return <Policy />;
-};
-
-export default PolicyPage;
+export default function Policy() {
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      Policy
+    </main>
+  );
+}
