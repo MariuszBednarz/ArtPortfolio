@@ -1,7 +1,10 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getClient } from "@/lib/apollo-client";
 import { gql } from "@apollo/client";
 import Image from "next/image";
+
+import NavigationLink from "@/components/NavLink";
 
 const GET_ART = gql`
   query GetPaintings {
@@ -21,26 +24,21 @@ const GET_ART = gql`
 `;
 
 export default async function Art({ params }: any) {
-  // if (true) {
-  //   notFound();
-  // }
-
   const { data } = await getClient().query({ query: GET_ART });
 
-  console.log(data);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      Art
+      Art {data.arts.length}
       {data.arts.map((el: any) => (
         <div key={el.id}>
           {el.id}
-
-          <Image
+          <NavigationLink href={`art/${el.id}`}>Link to subpage</NavigationLink>
+          {/* <Image
             src={el.artImage.url}
             width={el.artImage.width}
             height={el.artImage.height}
-            alt={el.artTitle}
-          />
+            alt={el.artImage}
+          /> */}
         </div>
       ))}
     </main>
