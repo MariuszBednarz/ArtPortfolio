@@ -4,7 +4,8 @@ import { getMessages } from "next-intl/server";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { NavBar } from "@/components/NavBar";
+import { NavBar } from "@/components/reusable/NavBar";
+import { ThemeProvider } from "next-themes";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,9 +27,15 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className={inter.className}>
         <NextIntlClientProvider messages={messages}>
-          <NavBar locale={locale} />
-          {children}
-          <footer>Footer</footer>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem={false}
+          >
+            <NavBar locale={locale} />
+            {children}
+            <footer>Footer</footer>
+          </ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>

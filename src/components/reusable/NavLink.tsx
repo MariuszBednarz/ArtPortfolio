@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import clsx from "clsx";
 import { useSelectedLayoutSegment } from "next/navigation";
@@ -10,16 +10,14 @@ export default function NavigationLink<
   Pathname extends keyof typeof pathnames
 >({ href, ...rest }: ComponentProps<typeof Link<Pathname>>) {
   const selectedLayoutSegment = useSelectedLayoutSegment();
+  console.log(selectedLayoutSegment);
   const pathname = selectedLayoutSegment ? `/${selectedLayoutSegment}` : "/";
   const isActive = pathname === href;
 
   return (
     <Link
       aria-current={isActive ? "page" : undefined}
-      className={clsx(
-        "inline-block px-2 py-3 transition-colors",
-        isActive ? "text-white" : "text-gray-400 hover:text-gray-200"
-      )}
+      className={clsx("w-full h-full ", isActive && "text-highlight")}
       href={href}
       {...rest}
     />

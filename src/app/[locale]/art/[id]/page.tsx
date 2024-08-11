@@ -2,28 +2,36 @@ import { gql } from "@apollo/client";
 import { getClient } from "@/lib/apollo-client";
 import { notFound } from "next/navigation";
 
-import { TranslatedPage } from "@/components/TranslatedPage";
+import Art from "@/components/features/artPage/Art";
 
-const GET_IDS = gql`
-  query GetPaintings {
-    arts(first: 100) {
-      id
+export default async function ArtPage({ params }: any) {
+  const GET_ART = gql`
+query GetPaintings {
+  arts(locales: ${params.locale}, where: { id: "${params.id}"}) {
+    id
+    createdAt
+    artYear
+    artType
+    artTitle
+    artDescription {
+      text
+    }
+    artImage(forceParentLocale: true) {
+      url
+      height
+      width
     }
   }
+}
 `;
 
-export default async function Art({ params }: any) {
-  const { data } = await getClient().query({ query: GET_IDS });
+  const { data } = await getClient().query({ query: GET_ART });
+
   const itemExists = data.arts.find((item: any) => item.id === params.id);
 
   if (!itemExists) {
     notFound();
   }
 
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <TranslatedPage />
-      Art {params.id}
-    </main>
-  );
+  return <Art data={data} />;
 }

@@ -1,5 +1,13 @@
 {
   "HomePage": {
     "title": "Witaj świecie!"
+  },
+  "Arts": {
+    "PAINTING": "Malarstwo",
+    "CERAMICS": "Ceramika",
+    "PERFORMANCE": "Performance",
+    "SCULPTURE": "Rzeźba",
+    "NONE": "Brak daty",
+    "WELL": "Cykl Umarłe Studnie"
   }
 }

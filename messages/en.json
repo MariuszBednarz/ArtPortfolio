@@ -1,5 +1,13 @@
 {
   "HomePage": {
     "title": "Hello world!"
+  },
+  "Arts": {
+    "PAINTING": "Paintings",
+    "CERAMICS": "Ceramics",
+    "PERFORMANCE": "Performance",
+    "SCULPTURE": "Sculptures",
+    "NONE": "No date",
+    "WELL": "The painting series 'Dead Wells'"
   }
 }

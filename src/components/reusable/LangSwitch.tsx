@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { usePathname, useRouter } from "../navigation";
+import { usePathname, useRouter } from "../../navigation";
 import { useLocale } from "next-intl";
 
 const LangSwitch: React.FC = ({ params }: any) => {

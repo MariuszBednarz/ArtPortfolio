@@ -1,7 +1,7 @@
-export default function PolicyPage() {
+export default function NotFound() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      Policy
+      404 not found
     </main>
   );
 }
