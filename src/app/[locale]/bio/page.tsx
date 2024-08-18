@@ -1,7 +1,8 @@
-import Bio from "@/components/features/bioPage/Bio";
-import { getClient } from "@/lib/apollo-client";
-import { gql } from "@apollo/client";
 import { notFound } from "next/navigation";
+import { gql } from "@apollo/client";
+import { getClient } from "@/lib/apollo-client";
+
+import Bio from "@/components/features/bioPage/Bio";
 
 const getBio = async (locale: string) => {
   const GET_BIO = gql`

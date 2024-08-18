@@ -1,7 +1,5 @@
+import { Suspense } from "react";
+
 export default function NotFound() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      404 not found
-    </main>
-  );
+  return <Suspense fallback={<div>loading</div>}>NotFound</Suspense>;
 }

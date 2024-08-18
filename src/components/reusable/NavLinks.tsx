@@ -3,13 +3,13 @@ import { useTranslations } from "next-intl";
 
 import NavigationLink from "./NavLink";
 
-const NavLinks = ({
+export default function NavLinks({
   mobile,
   toggleMenu,
 }: {
   mobile?: boolean | undefined;
   toggleMenu?: () => void;
-}) => {
+}) {
   const t = useTranslations("Nav");
 
   return (
@@ -30,6 +30,4 @@ const NavLinks = ({
       </li>
     </ul>
   );
-};
-
-export default NavLinks;
+}

@@ -1,4 +1,14 @@
 {
+  "Nav": {
+    "home": "Main page",
+    "art": "Catalogue",
+    "bio": "Bio",
+    "contact": "Contact",
+    "policy": "Cookies policy",
+    "info": "This page uses Cookies - ",
+    "allow": "Allow",
+    "decline": "Decline"
+  },
   "HomePage": {
     "title": "Hello world!"
   },

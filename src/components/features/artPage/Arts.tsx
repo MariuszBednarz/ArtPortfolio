@@ -58,7 +58,7 @@ export default function Arts({ data, types, collections, years }: any) {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <>
       <div>
         <select onChange={(e) => handleYearChange(e.target.value)}>
           <option value="clear">Clear filter</option>
@@ -111,6 +111,6 @@ export default function Arts({ data, types, collections, years }: any) {
           <NavigationLink href={`art/${el.id}`}>Link to subpage</NavigationLink>
         </div>
       ))}
-    </main>
+    </>
   );
 }

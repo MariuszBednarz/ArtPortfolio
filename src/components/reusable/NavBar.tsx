@@ -1,19 +1,21 @@
 "use client";
 import { useState } from "react";
 import clsx from "clsx";
+
 import NavLinks from "./NavLinks";
 import LangSwitch from "./LangSwitch";
 import ThemeSwitch from "./ThemeSwitch";
 import Burger from "./Burger";
 
-export const NavBar = ({ locale }: { locale: string }) => {
+export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
   return (
-    <header className="flex w-full justify-center bg-bright dark:bg-dark shadow-md">
+    <header className="flex w-full justify-center bg-bright dark:bg-dark">
       <nav className="flex w-full max-w-page flex-row justify-between h-20 items-center px-8 relative">
         <div className="hidden md:block">
           <NavLinks />
@@ -39,4 +41,4 @@ export const NavBar = ({ locale }: { locale: string }) => {
       </nav>
     </header>
   );
-};
+}
