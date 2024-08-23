@@ -4,15 +4,17 @@ import { gql } from "@apollo/client";
 import { getClient } from "@/lib/apollo-client";
 import { notFound } from "next/navigation";
 
-import Art from "@/components/features/artPage/Art";
+import { Art } from "@/components/pages";
+
+import { ParamsProps } from "@/types/components";
 
 import { getMeta } from "@/utils";
 
-type Props = {
-  params: { id: string; locale: string };
-};
+import { Item } from "@/types/components";
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: ParamsProps): Promise<Metadata> {
   const data = await getMeta(params.id, params.locale);
   const { artTitle, artDescription } = data.arts[0];
 
@@ -22,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function ArtPage({ params }: any) {
+const ArtPage = async ({ params }: ParamsProps): Promise<JSX.Element> => {
   const GET_ART = gql`
 query GetPaintings {
   arts(locales: ${params.locale}, where: { id: "${params.id}"}) {
@@ -45,11 +47,13 @@ query GetPaintings {
 
   const { data } = await getClient().query({ query: GET_ART });
 
-  const itemExists = data.arts.find((item: any) => item.id === params.id);
+  const itemExists = data.arts.find((item: Item) => item.id === params.id);
 
   if (!itemExists) {
     notFound();
   }
 
-  return <Art data={data} />;
-}
+  return <Art data={data.arts[0]} />;
+};
+
+export default ArtPage;

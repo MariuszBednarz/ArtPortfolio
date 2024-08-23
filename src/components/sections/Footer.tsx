@@ -1,9 +1,10 @@
 "use client";
+
 import { useTranslations } from "next-intl";
 
-import NavLink from "./NavLink";
+import { NavLink } from "@/components/reusable";
 
-export default function Footer() {
+const Footer = (): JSX.Element => {
   const t = useTranslations("Nav");
 
   return (
@@ -28,4 +29,6 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;

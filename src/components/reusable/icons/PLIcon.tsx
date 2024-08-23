@@ -1,4 +1,4 @@
-export default function PLIcon() {
+const PLIcon = (): JSX.Element => {
   return (
     <svg
       className="shadow"
@@ -47,4 +47,6 @@ export default function PLIcon() {
       </g>
     </svg>
   );
-}
+};
+
+export default PLIcon;

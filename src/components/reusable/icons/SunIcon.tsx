@@ -1,4 +1,4 @@
-export default function SunIcon() {
+const SunIcon = (): JSX.Element => {
   return (
     <svg
       className="fill-dark dark:fill-bright"
@@ -16,4 +16,6 @@ export default function SunIcon() {
       />
     </svg>
   );
-}
+};
+
+export default SunIcon;

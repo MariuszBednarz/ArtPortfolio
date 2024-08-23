@@ -1,5 +1,7 @@
-import Home from "@/components/features/homePage/Home";
+import { Home } from "@/components/pages";
 
-export default async function HomePage() {
+const HomePage = (): JSX.Element => {
   return <Home />;
-}
+};
+
+export default HomePage;

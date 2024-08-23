@@ -1,11 +1,7 @@
 import { getClient } from "@/lib/apollo-client";
 import { gql } from "@apollo/client";
 
-type artType = {
-  artYear: number | null;
-};
-
-export const getYears = async () => {
+export const getYears = async (): Promise<(number | null)[] | undefined> => {
   try {
     const { data } = await getClient().query({
       query: gql`
@@ -16,16 +12,24 @@ export const getYears = async () => {
         }
       `,
     });
-    const uniqueYears: unknown[] = [
-      ...new Set(
-        data.arts
-          .map((art: artType) => art.artYear)
-          .filter((year: number): year is number => year !== null)
-          .sort((a: number, b: number) => a - b)
-      ),
-    ];
+
+    const years: (number | null)[] = data.arts.map(
+      (art: { artYear: number | null }) => art.artYear
+    );
+
+    const filteredYears: number[] = years.filter(
+      (year): year is number => year !== null
+    );
+
+    const sortedYears: number[] = filteredYears.sort((a, b) => a - b);
+
+    const uniqueYears: (number | null)[] = [...new Set<number>(sortedYears)];
+
+    uniqueYears.unshift(null);
+
     return uniqueYears;
   } catch (err) {
-    console.error("couldn't get years", err);
+    console.error("Couldn't get years", err);
+    return undefined;
   }
 };

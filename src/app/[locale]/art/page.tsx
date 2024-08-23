@@ -2,11 +2,12 @@ import { notFound } from "next/navigation";
 import { getClient } from "@/lib/apollo-client";
 import { gql } from "@apollo/client";
 
+import { Arts } from "@/components/pages";
+import { ParamsProps } from "@/types/components";
+
 import { getEnums, getYears } from "@/utils";
 
-import Arts from "@/components/features/artPage/Arts";
-
-export default async function ArtsPage({ params }: any) {
+const ArtsPage = async ({ params }: ParamsProps): Promise<JSX.Element> => {
   const GET_ART = gql`
   query GetPaintings {
     arts(first: 100, locales: ${params.locale}) {
@@ -38,4 +39,6 @@ export default async function ArtsPage({ params }: any) {
   return (
     <Arts data={data} collections={collections} types={types} years={years} />
   );
-}
+};
+
+export default ArtsPage;

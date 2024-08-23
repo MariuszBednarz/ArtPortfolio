@@ -1,7 +1,13 @@
 import { getClient } from "@/lib/apollo-client";
 import { gql } from "@apollo/client";
 
-export const getEnums = async (enumName: string) => {
+interface EnumType {
+  name: string;
+}
+
+export const getEnums = async (
+  enumName: string
+): Promise<string[] | undefined> => {
   try {
     const { data } = await getClient().query({
       query: gql`
@@ -16,7 +22,7 @@ export const getEnums = async (enumName: string) => {
     });
     const result = data.__type.enumValues;
 
-    const enums = result.map((el: any) => {
+    const enums = result.map((el: EnumType) => {
       return el.name;
     });
     return enums;

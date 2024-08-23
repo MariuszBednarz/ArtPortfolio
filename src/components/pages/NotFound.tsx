@@ -1,5 +1,7 @@
 import { Suspense } from "react";
 
-export default function NotFound() {
+const NotFound = (): JSX.Element => {
   return <Suspense fallback={<div>loading</div>}>NotFound</Suspense>;
-}
+};
+
+export default NotFound;

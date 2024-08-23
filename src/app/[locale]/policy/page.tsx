@@ -1,5 +1,7 @@
-import Policy from "@/components/features/policyPage/Policy";
+import { Policy } from "@/components/pages";
 
-export default function PolicyPage() {
+const PolicyPage = (): JSX.Element => {
   return <Policy />;
-}
+};
+
+export default PolicyPage;

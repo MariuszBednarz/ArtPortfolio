@@ -1,15 +1,11 @@
 import clsx from "clsx";
 import { useTranslations } from "next-intl";
 
-import NavigationLink from "./NavLink";
+import NavLink from "./NavLink";
 
-export default function NavLinks({
-  mobile,
-  toggleMenu,
-}: {
-  mobile?: boolean | undefined;
-  toggleMenu?: () => void;
-}) {
+import { NavLinksProps } from "@/types/components";
+
+const NavLinks = ({ mobile, toggleMenu }: NavLinksProps): JSX.Element => {
   const t = useTranslations("Nav");
 
   return (
@@ -20,14 +16,16 @@ export default function NavLinks({
       )}
     >
       <li className="text-lg" onClick={toggleMenu}>
-        <NavigationLink href="/">{t("home")}</NavigationLink>
+        <NavLink href="/">{t("home")}</NavLink>
       </li>
       <li className="text-lg" onClick={toggleMenu}>
-        <NavigationLink href="/art">{t("art")}</NavigationLink>
+        <NavLink href="/art">{t("art")}</NavLink>
       </li>
       <li className="text-lg" onClick={toggleMenu}>
-        <NavigationLink href="/bio">{t("bio")}</NavigationLink>
+        <NavLink href="/bio">{t("bio")}</NavLink>
       </li>
     </ul>
   );
-}
+};
+
+export default NavLinks;

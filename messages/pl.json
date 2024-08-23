@@ -9,15 +9,21 @@
     "allow": "Zezwól",
     "decline": "Odmów"
   },
-  "HomePage": {
-    "title": "Witaj świecie!"
+  "Index": {
+    "bio": "Biogram",
+    "art": "Katalog"
   },
   "Arts": {
     "PAINTING": "Malarstwo",
     "CERAMICS": "Ceramika",
     "PERFORMANCE": "Performance",
     "SCULPTURE": "Rzeźba",
-    "NONE": "Brak daty",
-    "WELL": "Cykl Umarłe Studnie"
+    "NONE": "Prace spoza kolekcji",
+    "WELL": "Cykl Umarłe Studnie",
+    "year": "Rocznik",
+    "clean": "Wyczyśc filtr",
+    "defaultYear": "Rocznik",
+    "defaultCol": "Kolekcja",
+    "noYear": "Bez daty"
   }
 }

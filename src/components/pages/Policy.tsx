@@ -1,5 +1,7 @@
 import { Suspense } from "react";
 
-export default function Policy() {
+const Policy = (): JSX.Element => {
   return <Suspense fallback={<div>loading</div>}>Policy</Suspense>;
-}
+};
+
+export default Policy;

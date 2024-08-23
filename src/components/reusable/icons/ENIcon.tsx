@@ -1,4 +1,4 @@
-export default function ENIcon() {
+const ENIcon = (): JSX.Element => {
   return (
     <svg
       className="shadow"
@@ -60,4 +60,6 @@ export default function ENIcon() {
       </g>
     </svg>
   );
-}
+};
+
+export default ENIcon;

@@ -9,15 +9,21 @@
     "allow": "Allow",
     "decline": "Decline"
   },
-  "HomePage": {
-    "title": "Hello world!"
+  "Index": {
+    "bio": "Biography",
+    "art": "Catalogue"
   },
   "Arts": {
     "PAINTING": "Paintings",
     "CERAMICS": "Ceramics",
     "PERFORMANCE": "Performance",
     "SCULPTURE": "Sculptures",
-    "NONE": "No date",
-    "WELL": "The painting series 'Dead Wells'"
+    "NONE": "Works not included in collection",
+    "WELL": "The painting series 'Dead Wells'",
+    "year": "Year",
+    "clean": "Clean filter",
+    "defaultYear": "Year",
+    "defaultCol": "Collection",
+    "noYear": "No date"
   }
 }

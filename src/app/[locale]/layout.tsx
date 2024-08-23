@@ -7,6 +7,8 @@ import { Tenor_Sans } from "next/font/google";
 
 import { NavBar, Footer } from "@/components/reusable";
 
+import { RootLayoutProps } from "@/types/components";
+
 import "./globals.css";
 
 const tenor = Tenor_Sans({
@@ -24,13 +26,10 @@ export const metadata: Metadata = {
     "Wiesław Bednarz, portfolio, malarz, prace, obrazy, rzeźba, performance, kolekcja, dzieła, sztuki, stal, kamień, sztuka",
 };
 
-export default async function RootLayout({
+const RootLayout = async ({
   children,
   params: { locale },
-}: Readonly<{
-  children: React.ReactNode;
-  params: { locale: string };
-}>) {
+}: RootLayoutProps) => {
   const messages = await getMessages();
 
   return (
@@ -52,4 +51,6 @@ export default async function RootLayout({
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

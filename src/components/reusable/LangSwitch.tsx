@@ -4,11 +4,11 @@ import clsx from "clsx";
 import React from "react";
 import { useLocale } from "next-intl";
 
-import { usePathname, useRouter } from "../../navigation";
+import { usePathname, useRouter } from "@/navigation";
 
 import { ENIcon, PLIcon } from "./icons";
 
-export default function LangSwitch() {
+const LangSwitch = (): JSX.Element => {
   const router = useRouter();
   const locale = useLocale();
   const pathname = usePathname();
@@ -36,4 +36,6 @@ export default function LangSwitch() {
       <PLIcon />
     </div>
   );
-}
+};
+
+export default LangSwitch;

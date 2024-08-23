@@ -1,11 +1,8 @@
 import clsx from "clsx";
 
-type BurgerProps = {
-  toggleMenu: React.MouseEventHandler<HTMLDivElement>;
-  isOpen: boolean;
-};
+import { BurgerProps } from "@/types/components";
 
-export default function Burger({ toggleMenu, isOpen }: BurgerProps) {
+const Burger = ({ toggleMenu, isOpen }: BurgerProps): JSX.Element => {
   return (
     <div
       className="w-7 h-7 flex flex-col justify-between cursor-pointer"
@@ -40,4 +37,6 @@ export default function Burger({ toggleMenu, isOpen }: BurgerProps) {
       ></div>
     </div>
   );
-}
+};
+
+export default Burger;

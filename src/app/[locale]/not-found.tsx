@@ -1,5 +1,7 @@
-import NotFound from "@/components/features/notFoundPage/NotFound";
+import { NotFound } from "@/components/pages";
 
-export default function NotFoundPage() {
+const NotFoundPage = (): JSX.Element => {
   return <NotFound />;
-}
+};
+
+export default NotFoundPage;

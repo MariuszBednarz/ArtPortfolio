@@ -1,13 +1,16 @@
 "use client";
+
 import { useState } from "react";
 import clsx from "clsx";
 
-import NavLinks from "./NavLinks";
-import LangSwitch from "./LangSwitch";
-import ThemeSwitch from "./ThemeSwitch";
-import Burger from "./Burger";
+import {
+  Burger,
+  LangSwitch,
+  NavLinks,
+  ThemeSwitch,
+} from "@/components/reusable";
 
-export default function NavBar() {
+const NavBar = (): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -41,4 +44,6 @@ export default function NavBar() {
       </nav>
     </header>
   );
-}
+};
+
+export default NavBar;

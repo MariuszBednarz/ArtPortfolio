@@ -1,4 +1,4 @@
-export default function MoonIcon() {
+const MoonIcon = (): JSX.Element => {
   return (
     <svg
       className="fill-dark dark:fill-bright"
@@ -14,4 +14,6 @@ export default function MoonIcon() {
       />
     </svg>
   );
-}
+};
+
+export default MoonIcon;
