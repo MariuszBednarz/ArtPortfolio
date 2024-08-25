@@ -5,6 +5,7 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { CustomImage, NavLink } from "@/components/reusable";
 
 import { FilterArt } from "@/types/components";
+import NoResult from "../reusable/NoResult";
 
 const MasonryComponent = ({
   data,
@@ -23,6 +24,8 @@ const MasonryComponent = ({
 
   return (
     <div>
+      {data?.length === 0 && <NoResult />}
+
       <ResponsiveMasonry
         columnsCountBreakPoints={{ 350: 1, 480: 2, 768: 3 }}
         className="py-0"

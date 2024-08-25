@@ -5,7 +5,9 @@ import { getMessages } from "next-intl/server";
 import { ThemeProvider } from "next-themes";
 import { Tenor_Sans } from "next/font/google";
 
-import { NavBar, Footer } from "@/components/reusable";
+import { Footer } from "@/components/reusable";
+
+import { NavBar } from "@/components/sections";
 
 import { RootLayoutProps } from "@/types/components";
 
@@ -29,7 +31,7 @@ export const metadata: Metadata = {
 const RootLayout = async ({
   children,
   params: { locale },
-}: RootLayoutProps) => {
+}: RootLayoutProps): Promise<JSX.Element> => {
   const messages = await getMessages();
 
   return (

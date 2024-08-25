@@ -1,15 +1,15 @@
-import { Suspense } from "react";
-
 import Banner from "@/components/sections/Banner";
 import ContentWrapper from "@/components/reusable/ContentWrapper";
 
-export default function Home() {
+const Home = (): JSX.Element => {
   return (
-    <Suspense fallback={<div>loading</div>}>
+    <>
       <Banner />
       <ContentWrapper>
         <div>home content</div>
       </ContentWrapper>
-    </Suspense>
+    </>
   );
-}
+};
+
+export default Home;

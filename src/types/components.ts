@@ -108,3 +108,11 @@ export interface CustomImageProps
   extends Omit<ImageProps, "onLoadingComplete"> {
   alt: string;
 }
+
+export interface AwardProps {
+  data: {
+    title: string;
+    description: string | { expo: string; id: string }[];
+  };
+  lastItem?: boolean;
+}

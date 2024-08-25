@@ -6,11 +6,9 @@ import { notFound } from "next/navigation";
 
 import { Art } from "@/components/pages";
 
-import { ParamsProps } from "@/types/components";
+import { ParamsProps, Item } from "@/types/components";
 
 import { getMeta } from "@/utils";
-
-import { Item } from "@/types/components";
 
 export async function generateMetadata({
   params,

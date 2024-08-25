@@ -1,9 +1,8 @@
 "use client";
-import { useMemo, useState, Suspense } from "react";
-import { useTranslations } from "next-intl";
+import { useMemo, useState } from "react";
 
-import MasonryComponent from "@/components/sections/Masonry";
-import { Checkbox, Select, ContentWrapper } from "@/components/reusable";
+import { MasonryComponent, Filters } from "@/components/sections";
+import { ContentWrapper } from "@/components/reusable";
 
 import { FilterArtsProps, FilterState, FilterArt } from "@/types/components";
 
@@ -16,8 +15,6 @@ const Arts = ({
   const [year, setYear] = useState<FilterState>(undefined);
   const [type, setType] = useState<FilterState>(null);
   const [collection, setCollection] = useState<FilterState>(null);
-
-  const t = useTranslations("Arts");
 
   const filteredArts = useMemo(() => {
     return data.arts.filter((art: FilterArt) => {
@@ -35,47 +32,19 @@ const Arts = ({
     });
   }, [data.arts, year, type, collection]);
 
-  const handleTypeChange = (selectedType: string | null) => {
-    if (type === selectedType) {
-      setType(null);
-    } else if (type === null) {
-      setType(selectedType);
-    } else {
-      setType(selectedType);
-    }
-  };
-
   return (
     <ContentWrapper>
-      <Select
-        variant="yearSelect"
-        options={years}
-        selectedOption={year}
-        setSelectedOption={setYear}
-        defaultValue={undefined}
-        defaultText={t("defaultYear")}
+      <Filters
+        year={year}
+        years={years}
+        setYear={setYear}
+        type={type}
+        types={types}
+        setType={setType}
+        collection={collection}
+        collections={collections}
+        setCollection={setCollection}
       />
-      <Select
-        variant="colSelect"
-        options={collections}
-        selectedOption={collection}
-        setSelectedOption={setCollection}
-        defaultValue={null}
-        defaultText={t("defaultCol")}
-      />
-      <div>
-        {types &&
-          types.map((el: any) => {
-            return (
-              <Checkbox
-                key={el}
-                text={el}
-                selected={type === el}
-                handleCheckbox={handleTypeChange}
-              />
-            );
-          })}
-      </div>
       <MasonryComponent data={filteredArts} />
     </ContentWrapper>
   );

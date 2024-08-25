@@ -24,6 +24,18 @@
     "clean": "Wyczyśc filtr",
     "defaultYear": "Rocznik",
     "defaultCol": "Kolekcja",
-    "noYear": "Bez daty"
+    "noYear": "Bez daty",
+    "noResults": "Brak wyników",
+    "noResultsExtended": "Katalog nie zawiera prac spełniających wybrane kryteria"
+  },
+  "Details": {
+    "reveal": "Szczegóły",
+    "hide": "Zwiń"
+  },
+  "Bio": {
+    "profession": "Malarz, rzeźbiarz, performer",
+    "bioTitle": "Biogram",
+    "bioDescription": "Studia w Instytucie Wychowania Artystycznego na Uniwersytecie Marii Curie Skłodowskiej w Lublinie. Dyplom z rzeźby u prof. Sławomira Mieleszko w 1990 r. Uprawiał malarstwo sztalugowe, grafikę, rzeźbę i działania interdyscyplinarne.",
+    "exhibitions": "Wystawy"
   }
 }

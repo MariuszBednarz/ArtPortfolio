@@ -7,3 +7,23 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* For Webkit (Chrome, Safari, newer versions of Opera): */
+::-webkit-scrollbar {
+  width: 8px; /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  position: relative;
+  background: #30302e; /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* color of the scroll thumb */
+  border-radius: 6px; /* roundness of the scroll thumb */
+  /* border: 3px solid #f1f1f1; creates padding around scroll thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* color of the scroll thumb when hovering */
+}

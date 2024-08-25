@@ -24,6 +24,18 @@
     "clean": "Clean filter",
     "defaultYear": "Year",
     "defaultCol": "Collection",
-    "noYear": "No date"
+    "noYear": "No date",
+    "noResults": "No results",
+    "noResultsExtended": "The catalogue does not contain works that meet the selected criteria"
+  },
+  "Details": {
+    "reveal": "Details",
+    "hide": "Hide"
+  },
+  "Bio": {
+    "profession": "Painter, sculptor, performer",
+    "bioTitle": "Bio",
+    "bioDescription": "Studied at the Institute of Art Education at the Maria Curie-Skłodowska University in Lublin. Graduated with a diploma in sculpture under Prof. Sławomir Mieleszko in 1990. Practiced easel painting, printmaking, sculpture, and interdisciplinary activities.",
+    "exhibitions": "Exhibitions"
   }
 }
