@@ -2,6 +2,8 @@ import { useTranslations } from "next-intl";
 
 import { Select, Checkbox } from "@/components/reusable";
 
+import { FiltersProps } from "@/types/components";
+
 const Filters = ({
   years,
   year,
@@ -12,7 +14,7 @@ const Filters = ({
   type,
   types,
   setType,
-}: any): JSX.Element => {
+}: FiltersProps): JSX.Element => {
   const t = useTranslations("Arts");
   const handleTypeChange = (selectedType: string | null) => {
     if (type === selectedType) {

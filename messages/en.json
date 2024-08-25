@@ -37,5 +37,17 @@
     "bioTitle": "Bio",
     "bioDescription": "Studied at the Institute of Art Education at the Maria Curie-Skłodowska University in Lublin. Graduated with a diploma in sculpture under Prof. Sławomir Mieleszko in 1990. Practiced easel painting, printmaking, sculpture, and interdisciplinary activities.",
     "exhibitions": "Exhibitions"
+  },
+  "Policy": {
+    "cookie": "Cookies",
+    "cookieDescription": "When you use the website, we collect information about your activity. For this purpose we use cookies. They contain information that is stored on your end device - web browser. Installing cookies does not make any changes to your device or the software installed on it. We only use session cookies, which are deleted after the session ends, the duration of which depends on your browser settings.",
+    "usage": "What do we use cookies for?",
+    "usageDescription": "We use cookies to optimize the website, tailor it to the expectations of internet users, and facilitate browsing of content from various devices.",
+    "consent": "You can refuse to consent to the use of cookies using your browser settings",
+    "consentDescription": "At any time, you can modify your browser settings to prevent the installation of cookies on your device. You also have the option to delete already stored cookies, but limiting their use may affect the functionality of the website.",
+    "tools": "We use third-party tools from Google Inc.",
+    "toolsDescription": "On the website, we have implemented Google Analytics tools for traffic analysis and browsing activity. Statistical data is used for optimization and development of the application.",
+    "more": "You can find more information here: ",
+    "optout": "Additionally, you can use software to prevent Google Analytics from being used on the website: "
   }
 }

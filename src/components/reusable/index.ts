@@ -3,6 +3,7 @@ import Burger from "./Burger";
 import Button from "./Button";
 import Checkbox from "./Checkbox";
 import ContentWrapper from "./ContentWrapper";
+import CookieBanner from "./CookieBanner";
 import CustomImage from "./CustomImage";
 import Divider from "./Divider";
 import Footer from "../sections/Footer";
@@ -19,6 +20,7 @@ export {
   Button,
   Checkbox,
   ContentWrapper,
+  CookieBanner,
   CustomImage,
   Divider,
   Footer,

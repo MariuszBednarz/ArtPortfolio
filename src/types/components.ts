@@ -59,7 +59,6 @@ export interface ButtonProps {
   type?: string;
   fill?: boolean;
   themeDisabled?: boolean;
-  cookieButton?: boolean;
   onClick?: () => void;
 }
 
@@ -115,4 +114,16 @@ export interface AwardProps {
     description: string | { expo: string; id: string }[];
   };
   lastItem?: boolean;
+}
+
+export interface FiltersProps {
+  years: number[];
+  year: number;
+  setYear: React.Dispatch<React.SetStateAction<Option>>;
+  collection: string;
+  collections: string[];
+  setCollection: React.Dispatch<React.SetStateAction<Option>>;
+  type: string;
+  types: string[];
+  setType: React.Dispatch<React.SetStateAction<Option>>;
 }

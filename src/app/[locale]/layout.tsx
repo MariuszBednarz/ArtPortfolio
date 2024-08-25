@@ -5,13 +5,14 @@ import { getMessages } from "next-intl/server";
 import { ThemeProvider } from "next-themes";
 import { Tenor_Sans } from "next/font/google";
 
-import { Footer } from "@/components/reusable";
+import { Footer, CookieBanner } from "@/components/reusable";
 
-import { NavBar } from "@/components/sections";
+import { NavBar, GoogleAnalytics } from "@/components/sections";
 
 import { RootLayoutProps } from "@/types/components";
 
 import "./globals.css";
+import { Suspense } from "react";
 
 const tenor = Tenor_Sans({
   weight: "400",
@@ -27,6 +28,7 @@ export const metadata: Metadata = {
   keywords:
     "Wiesław Bednarz, portfolio, malarz, prace, obrazy, rzeźba, performance, kolekcja, dzieła, sztuki, stal, kamień, sztuka",
 };
+const GA = process.env.NEXT_GA_MEASUREMENT_ID;
 
 const RootLayout = async ({
   children,
@@ -36,6 +38,9 @@ const RootLayout = async ({
 
   return (
     <html lang={locale}>
+      <Suspense fallback={null}>
+        <GoogleAnalytics GA={GA} />
+      </Suspense>
       <body className={tenor.className}>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
@@ -47,6 +52,7 @@ const RootLayout = async ({
             <main className="w-full h-full min-h-mobilePage sm:min-h-page bg-white dark:bg-darker">
               {children}
             </main>
+            <CookieBanner />
             <Footer />
           </ThemeProvider>
         </NextIntlClientProvider>

@@ -7,7 +7,6 @@ const Button = ({
   type,
   fill,
   themeDisabled,
-  cookieButton,
   onClick,
 }: ButtonProps): JSX.Element => {
   return (
