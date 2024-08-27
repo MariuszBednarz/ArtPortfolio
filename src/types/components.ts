@@ -117,14 +117,20 @@ export interface AwardProps {
 }
 
 export interface FiltersProps {
-  years: number[];
-  year: number;
+  years: (number | null)[] | undefined;
+  year: FilterState;
   setYear: React.Dispatch<React.SetStateAction<Option>>;
-  collection: string;
-  collections: string[];
+  collection: FilterState;
+  collections: string[] | undefined;
   setCollection: React.Dispatch<React.SetStateAction<Option>>;
-  type: string;
-  types: string[];
+  type: FilterState;
+  types: string[] | undefined;
+  setType: React.Dispatch<React.SetStateAction<Option>>;
+}
+
+export interface CheckboxesProps {
+  type: FilterState;
+  types: string[] | undefined;
   setType: React.Dispatch<React.SetStateAction<Option>>;
 }
 

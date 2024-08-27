@@ -5,7 +5,7 @@ import { clsx } from "clsx";
 
 import { Chevron } from "./icons";
 
-import { SelectProps } from "@/types/components";
+import { SelectProps, FilterState } from "@/types/components";
 
 const Select = ({
   variant,
@@ -23,7 +23,7 @@ const Select = ({
 
   const handleDropdown = () => setIsOpen(!isOpen);
 
-  const handleOptionClick = (option: string | number | null) => {
+  const handleOptionClick = (option: FilterState) => {
     setSelectedOption(option);
     setIsOpen(false);
   };

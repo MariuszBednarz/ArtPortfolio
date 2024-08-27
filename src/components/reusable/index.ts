@@ -2,6 +2,7 @@ import Award from "./Award";
 import Burger from "./Burger";
 import Button from "./Button";
 import Checkbox from "./Checkbox";
+import Checkboxes from "./Checkboxes";
 import ContentWrapper from "./ContentWrapper";
 import CookieBanner from "./CookieBanner";
 import CustomImage from "./CustomImage";
@@ -20,6 +21,7 @@ export {
   Burger,
   Button,
   Checkbox,
+  Checkboxes,
   ContentWrapper,
   CookieBanner,
   CustomImage,
