@@ -1,13 +1,13 @@
 import createMiddleware from "next-intl/middleware";
-import { pathnames, locales } from "./config";
+import { localePrefix, defaultLocale, locales, pathnames } from "./config";
 
 export default createMiddleware({
-  defaultLocale: "pl",
+  defaultLocale,
   locales,
+  localePrefix,
   pathnames,
 });
 
 export const config = {
-  // Match only internationalized pathnames
-  matcher: ["/", "/(pl|en)/:path*"],
+  matcher: ["/", "/(de|en)/:path*", "/((?!_next|_vercel|.*\\..*).*)"],
 };

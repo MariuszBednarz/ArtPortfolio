@@ -1,26 +1,57 @@
-import { getMeta } from "@/src/utils/getMeta";
+import type { Metadata } from "next";
 
-import Art, { ArtParams } from "@/src/features/art/Art";
+import { gql } from "@apollo/client";
+import { getClient } from "@/lib/apollo-client";
+import { notFound } from "next/navigation";
 
-interface Props {
-  params: {
-    id: string;
-  };
-}
+import { Art } from "@/components/pages";
 
-export async function generateMetadata({ params }: Props) {
-  const { id } = params;
-  const meta = await getMeta(id);
+import { ParamsProps, Item } from "@/types/components";
+
+import { getMeta } from "@/utils";
+
+export async function generateMetadata({
+  params,
+}: ParamsProps): Promise<Metadata> {
+  const data = await getMeta(params.id, params.locale);
+  const { artTitle, artDescription } = data.arts[0];
+
   return {
-    title: meta.art.artTitle,
-    description: meta.art.artDescription.text,
-    keywords:
-      "Wiesław Bednarz, portfolio, malarz, prace, obrazy, rzeźba, performance, kolekcja, dzieła, sztuki, stal, kamień, sztuka",
+    title: artTitle,
+    description: artDescription.text,
   };
 }
 
-const ArtPage = ({ params }: { params: ArtParams }) => {
-  return <Art params={params} />;
+const ArtPage = async ({ params }: ParamsProps): Promise<JSX.Element> => {
+  const GET_ART = gql`
+query GetPaintings {
+  arts(locales: ${params.locale}, where: { id: "${params.id}"}) {
+    id
+    createdAt
+    artYear
+    artType
+    artTitle
+    artDescription {
+      text
+    }
+    artImage(forceParentLocale: true) {
+      url
+      height
+      width
+    }
+  }
+}
+`;
+
+  const { data } = await getClient().query({ query: GET_ART });
+
+  const itemExists = data.arts.find((item: Item) => item.id === params.id);
+
+  if (!itemExists) {
+    notFound();
+  }
+
+  return <Art data={data.arts[0]} />;
 };
 
 export default ArtPage;

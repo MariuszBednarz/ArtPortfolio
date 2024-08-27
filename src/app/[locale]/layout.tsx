@@ -1,15 +1,20 @@
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+
 import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+import { ThemeProvider } from "next-themes";
 import { Tenor_Sans } from "next/font/google";
 
-import Layout from "@/src/components/layout/Layout";
-import CookieBanner from "@/src/components/CookieBanner";
-import GoogleAnalytics from "@/src/components/GoogleAnalytics";
+import { Footer, CookieBanner } from "@/components/reusable";
+
+import { NavBar, GoogleAnalytics } from "@/components/sections";
+
+import { RootLayoutProps } from "@/types/components";
 
 import "./globals.css";
+import { Suspense } from "react";
 
-const lexend = Tenor_Sans({
+const tenor = Tenor_Sans({
   weight: "400",
   subsets: ["latin"],
   display: "swap",
@@ -23,32 +28,33 @@ export const metadata: Metadata = {
   keywords:
     "Wiesław Bednarz, portfolio, malarz, prace, obrazy, rzeźba, performance, kolekcja, dzieła, sztuki, stal, kamień, sztuka",
 };
-
-const ga = process.env.NEXT_GA_MEASUREMENT_ID;
+const GA = process.env.NEXT_GA_MEASUREMENT_ID;
 
 const RootLayout = async ({
   children,
-  params: { locale = "pl" },
-}: {
-  children: React.ReactNode;
-  params: { locale: string };
-}) => {
-  let messages;
-  try {
-    messages = (await import(`../../../messages/${locale}.json`)).default;
-  } catch (error) {
-    notFound();
-  }
+  params: { locale },
+}: RootLayoutProps): Promise<JSX.Element> => {
+  const messages = await getMessages();
 
   return (
     <html lang={locale}>
-      <GoogleAnalytics GA_MEASUREMENT_ID={ga} />
-      <body className={lexend.className}>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <Layout>
-            {children}
+      <Suspense fallback={null}>
+        <GoogleAnalytics GA={GA} />
+      </Suspense>
+      <body className={tenor.className}>
+        <NextIntlClientProvider messages={messages}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem={false}
+          >
+            <NavBar />
+            <main className="w-full h-full min-h-mobilePage sm:min-h-page bg-white dark:bg-darker">
+              {children}
+            </main>
             <CookieBanner />
-          </Layout>
+            <Footer />
+          </ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>

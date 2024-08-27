@@ -10,30 +10,33 @@
     "decline": "Decline"
   },
   "Index": {
-    "title": "Hello world!",
     "bio": "Biography",
     "art": "Catalogue"
+  },
+  "Arts": {
+    "PAINTING": "Paintings",
+    "CERAMICS": "Ceramics",
+    "PERFORMANCE": "Performance",
+    "SCULPTURE": "Sculptures",
+    "NONE": "Works not included in collection",
+    "WELL": "The painting series 'Dead Wells'",
+    "year": "Year",
+    "clean": "Clean filter",
+    "defaultYear": "Year",
+    "defaultCol": "Collection",
+    "noYear": "No date",
+    "noResults": "No results",
+    "noResultsExtended": "The catalogue does not contain works that meet the selected criteria"
+  },
+  "Details": {
+    "reveal": "Details",
+    "hide": "Hide"
   },
   "Bio": {
     "profession": "Painter, sculptor, performer",
     "bioTitle": "Bio",
-    "bioDescription": "Studied at the Institute of Art Education at the Maria Curie-Skłodowska University in Lublin. Graduated with a diploma in sculpture under Prof. Sławomir Mieleszko in 1990. Practiced easel painting, printmaking, sculpture, and interdisciplinary activities."
-  },
-  "Art": {
-    "year": "Year",
-    "collection": "Collection",
-    "PAINTING": "Paintings",
-    "SCULPTURE": "Sculptures",
-    "CERAMICS": "Ceramics",
-    "PERFORMANCE": "Performances",
-    "clean": "Clean filters",
-    "NONE": "Works not included in collections",
-    "WELL": "Well",
-    "STONES": "Stone sculptures",
-    "STRUCTURES": "Structures",
-    "noResults": "No results",
-    "noResultsExtended": "The catalogue does not contain works that meet the selected criteria",
-    "noDate": "no date"
+    "bioDescription": "Studied at the Institute of Art Education at the Maria Curie-Skłodowska University in Lublin. Graduated with a diploma in sculpture under Prof. Sławomir Mieleszko in 1990. Practiced easel painting, printmaking, sculpture, and interdisciplinary activities.",
+    "exhibitions": "Exhibitions"
   },
   "Policy": {
     "cookie": "Cookies",
@@ -46,9 +49,5 @@
     "toolsDescription": "On the website, we have implemented Google Analytics tools for traffic analysis and browsing activity. Statistical data is used for optimization and development of the application.",
     "more": "You can find more information here: ",
     "optout": "Additionally, you can use software to prevent Google Analytics from being used on the website: "
-  },
-  "Details": {
-    "reveal": "Details",
-    "hide": "Hide"
   }
 }

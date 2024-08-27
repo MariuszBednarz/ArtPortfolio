@@ -1,6 +1,6 @@
-import Policy from "@/src/features/policy/Policy";
+import { Policy } from "@/components/pages";
 
-const PolicyPage = () => {
+const PolicyPage = (): JSX.Element => {
   return <Policy />;
 };
 

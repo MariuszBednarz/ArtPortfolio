@@ -10,28 +10,33 @@
     "decline": "Odmów"
   },
   "Index": {
-    "title": "Witaj świecie!",
     "bio": "Biogram",
     "art": "Katalog"
+  },
+  "Arts": {
+    "PAINTING": "Malarstwo",
+    "CERAMICS": "Ceramika",
+    "PERFORMANCE": "Performance",
+    "SCULPTURE": "Rzeźba",
+    "NONE": "Prace spoza kolekcji",
+    "WELL": "Cykl Umarłe Studnie",
+    "year": "Rocznik",
+    "clean": "Wyczyśc filtr",
+    "defaultYear": "Rocznik",
+    "defaultCol": "Kolekcja",
+    "noYear": "Bez daty",
+    "noResults": "Brak wyników",
+    "noResultsExtended": "Katalog nie zawiera prac spełniających wybrane kryteria"
+  },
+  "Details": {
+    "reveal": "Szczegóły",
+    "hide": "Zwiń"
   },
   "Bio": {
     "profession": "Malarz, rzeźbiarz, performer",
     "bioTitle": "Biogram",
-    "bioDescription": "Studia w Instytucie Wychowania Artystycznego na Uniwersytecie Marii Curie Skłodowskiej w Lublinie. Dyplom z rzeźby u prof. Sławomira Mieleszko w 1990 r. Uprawiał malarstwo sztalugowe, grafikę, rzeźbę i działania interdyscyplinarne."
-  },
-  "Art": {
-    "year": "Rocznik",
-    "collection": "Kolekcja",
-    "PAINTING": "Malarstwo",
-    "SCULPTURE": "Rzeźba",
-    "CERAMICS": "Ceramika",
-    "PERFORMANCE": "Performance",
-    "clean": "Wyczyść filtr",
-    "NONE": "Prace nieujęte w kolekcjach",
-    "WELL": "Cykl 'Umarłe Studnie'",
-    "noResults": "Brak wyników",
-    "noResultsExtended": "Katalog nie zawiera prac spełniających wybrane kryteria",
-    "noDate": "brak daty"
+    "bioDescription": "Studia w Instytucie Wychowania Artystycznego na Uniwersytecie Marii Curie Skłodowskiej w Lublinie. Dyplom z rzeźby u prof. Sławomira Mieleszko w 1990 r. Uprawiał malarstwo sztalugowe, grafikę, rzeźbę i działania interdyscyplinarne.",
+    "exhibitions": "Wystawy"
   },
   "Policy": {
     "cookie": "Pliki Cookies",
@@ -44,9 +49,5 @@
     "toolsDescription": "Na stronie zastosowaliśmy narzędzie Google Analytics do analizy ruchu oraz aktywności dotyczących jej przeglądania. Dane statystyczne służą do optymalizacji i rozwoju aplikacji.",
     "more": "Więcej informacji możesz uzyskać tutaj: ",
     "optout": "Ponad to, możesz zastosować oprogramowanie dzięki któremu Google Analytics nie będzie stosowane na witrynie: "
-  },
-  "Details": {
-    "reveal": "Szczegóły",
-    "hide": "Zwiń"
   }
 }

@@ -1,25 +1,9 @@
-import { Pathnames } from "next-intl/navigation";
+import { Pathnames, LocalePrefix } from "next-intl/routing";
 
+export const defaultLocale = "en" as const;
 export const locales = ["en", "pl"] as const;
 
-type pathnamesTypes = {
-  "/": string;
-  "/bio": {
-    en: "/bio";
-    pl: "/bio";
-  };
-  "/art": {
-    en: "/art";
-    pl: "/art";
-  };
-  "/art/": {
-    en: "/art/" | string;
-    pl: "/art/" | string;
-  };
-};
-//types to fix
-
-export const pathnames = {
+export const pathnames: Pathnames<typeof locales> = {
   "/": "/",
   "/bio": {
     en: "/bio",
@@ -37,6 +21,11 @@ export const pathnames = {
     en: "/policy",
     pl: "/policy",
   },
-} satisfies Pathnames<typeof locales>;
+};
 
-export type AppPathnames = keyof typeof pathnames;
+export const localePrefix: LocalePrefix<typeof locales> = "always";
+
+export const port = process.env.PORT || 3000;
+export const host = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : `http://localhost:${port}`;
