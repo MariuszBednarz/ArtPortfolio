@@ -1,8 +1,8 @@
-import Banner from "./Banner";
 import Footer from "./Footer";
 import GoogleAnalytics from "./GoogleAnalytics";
 import MasonryComponent from "./Masonry";
 import NavBar from "./NavBar";
 import Filters from "./Filters";
+import Hero from "./Hero";
 
-export { Banner, Footer, MasonryComponent, NavBar, Filters, GoogleAnalytics };
+export { Footer, MasonryComponent, NavBar, Filters, GoogleAnalytics, Hero };

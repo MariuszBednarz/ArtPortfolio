@@ -127,3 +127,16 @@ export interface FiltersProps {
   types: string[];
   setType: React.Dispatch<React.SetStateAction<Option>>;
 }
+
+export interface HomeArt {
+  id: string;
+  artImage: { url: string };
+}
+
+export interface HomeImage {
+  id: string;
+  url: string;
+}
+export interface HomeProps {
+  images: HomeImage[];
+}

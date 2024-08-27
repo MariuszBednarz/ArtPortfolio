@@ -7,6 +7,7 @@ import CookieBanner from "./CookieBanner";
 import CustomImage from "./CustomImage";
 import Divider from "./Divider";
 import Footer from "../sections/Footer";
+import ImageCarousel from "./ImageCarousel";
 import LangSwitch from "./LangSwitch";
 import Loader from "./Loader";
 import NavLink from "./NavLink";
@@ -24,6 +25,7 @@ export {
   CustomImage,
   Divider,
   Footer,
+  ImageCarousel,
   LangSwitch,
   Loader,
   NavLink,
