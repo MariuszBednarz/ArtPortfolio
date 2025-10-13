@@ -1,4 +1,4 @@
-const Divider = (): JSX.Element => {
+const Divider = () => {
   return (
     <div className="w-full h-px dark:bg-bright bg-dark rounded my-4"></div>
   );

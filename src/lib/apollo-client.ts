@@ -13,6 +13,19 @@ export const { getClient } = registerApolloClient(() => {
     cache: new InMemoryCache(),
     link: new HttpLink({
       uri: endpoint,
+      fetchOptions: {
+        cache: "no-store",
+        signal: AbortSignal.timeout(30000), // 30 seconds timeout
+      },
     }),
+    defaultOptions: {
+      watchQuery: {
+        fetchPolicy: "no-cache",
+      },
+      query: {
+        fetchPolicy: "no-cache",
+        errorPolicy: "all",
+      },
+    },
   });
 });

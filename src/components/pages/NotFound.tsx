@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 
-const NotFound = (): JSX.Element => {
+const NotFound = () => {
   return <Suspense fallback={<div>loading</div>}>NotFound</Suspense>;
 };
 

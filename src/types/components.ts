@@ -86,7 +86,7 @@ export interface SelectProps {
 }
 
 export type ParamsProps = {
-  params: { id: string; locale: string };
+  params: Promise<{ id: string; locale: string }>;
 };
 
 export interface Item {
@@ -95,7 +95,7 @@ export interface Item {
 
 export type RootLayoutProps = Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }>;
 
 export interface ChevronProps {

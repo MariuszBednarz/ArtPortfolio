@@ -1,6 +1,6 @@
 import { NotFound } from "@/components/pages";
 
-const NotFoundPage = (): JSX.Element => {
+const NotFoundPage = () => {
   return <NotFound />;
 };
 

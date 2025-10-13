@@ -10,7 +10,7 @@ import {
   ThemeSwitch,
 } from "@/components/reusable";
 
-const NavBar = (): JSX.Element => {
+const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {

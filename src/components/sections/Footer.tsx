@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 
 import { NavLink } from "@/components/reusable";
 
-const Footer = (): JSX.Element => {
+const Footer = () => {
   const t = useTranslations("Nav");
 
   return (
@@ -16,7 +16,7 @@ const Footer = (): JSX.Element => {
               href={"https://www.linkedin.com/in/mariusz-bednarz-89a092123/"}
               target="_blank"
             >
-              &copy; 2024 Mariusz Bednarz
+              &copy; 2025 Mariusz Bednarz
             </a>
           </li>
           <li>

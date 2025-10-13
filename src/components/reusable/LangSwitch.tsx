@@ -8,7 +8,7 @@ import { usePathname, useRouter } from "@/navigation";
 
 import { ENIcon, PLIcon } from "./icons";
 
-const LangSwitch = (): JSX.Element => {
+const LangSwitch = () => {
   const router = useRouter();
   const locale = useLocale();
   const pathname = usePathname();

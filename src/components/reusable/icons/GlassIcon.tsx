@@ -1,4 +1,4 @@
-const GlassIcon = (): JSX.Element => {
+const GlassIcon = () => {
   return (
     <svg
       className="absolute m-2 animate-pulse-slow"

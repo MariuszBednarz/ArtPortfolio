@@ -8,7 +8,7 @@ import { NavLink } from "@/components/reusable";
 
 import Button from "./Button";
 
-const CookieBanner = (): JSX.Element | null => {
+const CookieBanner = () => {
   const [cookieConsent, setCookieConsent] = useState<null | boolean>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const t = useTranslations("Nav");

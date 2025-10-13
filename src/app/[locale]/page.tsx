@@ -5,10 +5,12 @@ import { gql } from "@apollo/client";
 import { Home } from "@/components/pages";
 import { ParamsProps, HomeArt } from "@/types/components";
 
-const HomePage = async ({ params }: ParamsProps): Promise<JSX.Element> => {
+const HomePage = async ({ params }: ParamsProps) => {
+  const { locale } = await params;
+
   const GET_ART = gql`
   query GetPaintings {
-    arts(first: 100, locales: ${params.locale}) {
+    arts(first: 100, locales: ${locale}) {
       id
       artImage(forceParentLocale: true) {
         url
@@ -19,9 +21,15 @@ const HomePage = async ({ params }: ParamsProps): Promise<JSX.Element> => {
   }
 `;
 
-  const { data } = await getClient().query({ query: GET_ART });
+  const { data } = await getClient().query<{ arts: HomeArt[] }>({
+    query: GET_ART,
+  });
 
-  const images = await data.arts.map((art: HomeArt) => {
+  if (!data) {
+    return notFound();
+  }
+
+  const images = data.arts.map((art: HomeArt) => {
     return {
       id: art.id,
       url: art.artImage.url,

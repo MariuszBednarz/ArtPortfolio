@@ -1,4 +1,4 @@
-const SunIcon = (): JSX.Element => {
+const SunIcon = () => {
   return (
     <svg
       className="fill-dark dark:fill-bright"

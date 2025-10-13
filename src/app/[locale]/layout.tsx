@@ -30,18 +30,16 @@ export const metadata: Metadata = {
 };
 const GA = process.env.NEXT_GA_MEASUREMENT_ID;
 
-const RootLayout = async ({
-  children,
-  params: { locale },
-}: RootLayoutProps): Promise<JSX.Element> => {
+const RootLayout = async ({ children, params }: RootLayoutProps) => {
+  const { locale } = await params;
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <Suspense fallback={null}>
         <GoogleAnalytics GA={GA} />
       </Suspense>
-      <body className={tenor.className}>
+      <body className={tenor.className} suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
             attribute="class"

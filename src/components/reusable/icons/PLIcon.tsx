@@ -1,4 +1,4 @@
-const PLIcon = (): JSX.Element => {
+const PLIcon = () => {
   return (
     <svg
       className="shadow"

@@ -8,7 +8,7 @@ import { BioProps } from "@/types/components";
 
 import portrait from "../../../public/Bednarz-Wieslaw.jpg";
 
-const Bio = ({ bio }: BioProps): JSX.Element => {
+const Bio = ({ bio }: BioProps) => {
   const t = useTranslations("Bio");
   const data = {
     title: t("bioTitle"),

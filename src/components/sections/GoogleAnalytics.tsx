@@ -10,11 +10,7 @@ declare global {
   }
 }
 
-export default function GoogleAnalytics({
-  GA,
-}: {
-  GA: string | undefined;
-}): JSX.Element {
+export default function GoogleAnalytics({ GA }: { GA: string | undefined }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 

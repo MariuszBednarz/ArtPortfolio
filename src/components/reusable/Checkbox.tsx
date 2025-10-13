@@ -7,7 +7,7 @@ const Checkbox = ({
   selected,
   text,
   handleCheckbox,
-}: CheckboxProps): JSX.Element => {
+}: CheckboxProps) => {
   const t = useTranslations("Arts");
 
   return (

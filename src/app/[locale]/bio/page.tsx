@@ -5,7 +5,14 @@ import { getClient } from "@/lib/apollo-client";
 import { Bio } from "@/components/pages";
 import { ParamsProps } from "@/types/components";
 
-const getBio = async (locale: string) => {
+interface BioData {
+  expos: Array<{
+    expo: string;
+    id: string;
+  }>;
+}
+
+const getBio = async (locale: string): Promise<BioData | null> => {
   const GET_BIO = gql`
     query MyQuery {
       expos(locales: ${locale}) {
@@ -14,12 +21,13 @@ const getBio = async (locale: string) => {
       }
     }
     `;
-  const { data } = await getClient().query({ query: GET_BIO });
-  return data;
+  const { data } = await getClient().query<BioData>({ query: GET_BIO });
+  return data || null;
 };
 
 export default async function BioPage({ params }: ParamsProps) {
-  const bio = await getBio(params.locale);
+  const { locale } = await params;
+  const bio = await getBio(locale);
   if (!bio) {
     notFound();
   }

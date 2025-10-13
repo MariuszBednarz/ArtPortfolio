@@ -8,11 +8,7 @@ import { FilterArt } from "@/types/components";
 import { GlassIcon } from "@/components/reusable/icons";
 import NoResult from "../reusable/NoResult";
 
-const MasonryComponent = ({
-  data,
-}: {
-  data?: FilterArt[];
-}): JSX.Element | null => {
+const MasonryComponent = ({ data }: { data?: FilterArt[] }) => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -32,6 +28,7 @@ const MasonryComponent = ({
       >
         <Masonry gutter="16px">
           {data?.map((art: FilterArt) => (
+            // @ts-expect-error - Dynamic route not in pathnames config
             <NavLink key={art.id} href={`/art/${art.id}`}>
               <GlassIcon />
               <CustomImage

@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 
 import { MoonIcon, SunIcon } from "./icons";
 
-const ThemeSwitch = (): JSX.Element => {
+const ThemeSwitch = () => {
   const { theme, setTheme } = useTheme();
 
   const handleTheme = () => {

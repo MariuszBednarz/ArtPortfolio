@@ -8,7 +8,7 @@ const Button = ({
   fill,
   themeDisabled,
   onClick,
-}: ButtonProps): JSX.Element => {
+}: ButtonProps) => {
   return (
     <button
       onClick={onClick}

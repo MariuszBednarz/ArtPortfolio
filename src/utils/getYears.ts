@@ -1,9 +1,15 @@
 import { getClient } from "@/lib/apollo-client";
 import { gql } from "@apollo/client";
 
+interface YearsData {
+  arts: Array<{
+    artYear: number | null;
+  }>;
+}
+
 export const getYears = async (): Promise<(number | null)[] | undefined> => {
   try {
-    const { data } = await getClient().query({
+    const { data } = await getClient().query<YearsData>({
       query: gql`
         query GetYears {
           arts(first: 100) {
@@ -12,6 +18,10 @@ export const getYears = async (): Promise<(number | null)[] | undefined> => {
         }
       `,
     });
+
+    if (!data) {
+      return undefined;
+    }
 
     const years: (number | null)[] = data.arts.map(
       (art: { artYear: number | null }) => art.artYear

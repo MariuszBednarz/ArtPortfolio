@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-const NotFoundCatchAll = (): JSX.Element => {
+const NotFoundCatchAll = () => {
   notFound();
 };
 

@@ -1,4 +1,4 @@
-const ENIcon = (): JSX.Element => {
+const ENIcon = () => {
   return (
     <svg
       className="shadow"

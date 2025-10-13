@@ -2,7 +2,7 @@ import { NoResultIcon } from "./icons";
 
 import { useTranslations } from "next-intl";
 
-const NoResult = (): JSX.Element => {
+const NoResult = () => {
   const t = useTranslations("Arts");
   return (
     <div className="flex justify-center w-full my-8 px-4">

@@ -3,14 +3,20 @@ import { getClient } from "@/lib/apollo-client";
 import { gql } from "@apollo/client";
 
 import { Arts } from "@/components/pages";
-import { ParamsProps } from "@/types/components";
+import { ParamsProps, FilterArt } from "@/types/components";
 
 import { getEnums, getYears } from "@/utils";
 
-const ArtsPage = async ({ params }: ParamsProps): Promise<JSX.Element> => {
+interface ArtsData {
+  arts: FilterArt[];
+}
+
+const ArtsPage = async ({ params }: ParamsProps) => {
+  const { locale } = await params;
+
   const GET_ART = gql`
   query GetPaintings {
-    arts(first: 100, locales: ${params.locale}) {
+    arts(first: 100, locales: ${locale}) {
       id
       createdAt
       artYear
@@ -26,7 +32,7 @@ const ArtsPage = async ({ params }: ParamsProps): Promise<JSX.Element> => {
   }
 `;
 
-  const { data } = await getClient().query({ query: GET_ART });
+  const { data } = await getClient().query<ArtsData>({ query: GET_ART });
 
   const collections = await getEnums("ArtCollection");
   const types = await getEnums("ArtType");

@@ -14,7 +14,7 @@ const Filters = ({
   type,
   types,
   setType,
-}: FiltersProps): JSX.Element => {
+}: FiltersProps) => {
   const t = useTranslations("Arts");
 
   return (

@@ -11,7 +11,7 @@ const Arts = ({
   types,
   collections,
   years,
-}: FilterArtsProps): JSX.Element => {
+}: FilterArtsProps) => {
   const [year, setYear] = useState<FilterState>(undefined);
   const [type, setType] = useState<FilterState>(null);
   const [collection, setCollection] = useState<FilterState>(null);

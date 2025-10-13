@@ -6,7 +6,7 @@ import { ContentWrapper, Button, CustomImage } from "@/components/reusable";
 
 import { ArtProps } from "@/types/components";
 
-const Art = ({ data }: ArtProps): JSX.Element => {
+const Art = ({ data }: ArtProps) => {
   const [open, setOpen] = useState(false);
 
   const t = useTranslations("Details");

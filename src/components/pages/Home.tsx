@@ -3,7 +3,7 @@ import { Hero } from "@/components/sections";
 
 import { HomeProps } from "@/types/components";
 
-const Home = ({ images }: HomeProps): JSX.Element => {
+const Home = ({ images }: HomeProps) => {
   return (
     <div className="w-full relative h-page flex justify-center flex-col">
       <div className="relative h-full w-full brightness-50">

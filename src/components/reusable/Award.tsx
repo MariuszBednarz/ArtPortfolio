@@ -2,7 +2,7 @@ import { Divider } from "@/components/reusable";
 
 import { AwardProps } from "@/types/components";
 
-const Award = ({ data, lastItem }: AwardProps): JSX.Element => {
+const Award = ({ data, lastItem }: AwardProps) => {
   const { title, description } = data;
   return (
     <div className="w-full flex flex-col items-center">

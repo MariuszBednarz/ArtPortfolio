@@ -13,7 +13,8 @@ import { getMeta } from "@/utils";
 export async function generateMetadata({
   params,
 }: ParamsProps): Promise<Metadata> {
-  const data = await getMeta(params.id, params.locale);
+  const { id, locale } = await params;
+  const data = await getMeta(id, locale);
   const { artTitle, artDescription } = data.arts[0];
 
   return {
@@ -22,10 +23,24 @@ export async function generateMetadata({
   };
 }
 
-const ArtPage = async ({ params }: ParamsProps): Promise<JSX.Element> => {
+interface ArtData {
+  arts: Array<{
+    id: string;
+    createdAt: string;
+    artYear: string | null;
+    artType: string;
+    artTitle: string;
+    artDescription: { text: string };
+    artImage: { url: string; height: number; width: number };
+  }>;
+}
+
+const ArtPage = async ({ params }: ParamsProps) => {
+  const { id, locale } = await params;
+  
   const GET_ART = gql`
 query GetPaintings {
-  arts(locales: ${params.locale}, where: { id: "${params.id}"}) {
+  arts(locales: ${locale}, where: { id: "${id}"}) {
     id
     createdAt
     artYear
@@ -43,9 +58,13 @@ query GetPaintings {
 }
 `;
 
-  const { data } = await getClient().query({ query: GET_ART });
+  const { data } = await getClient().query<ArtData>({ query: GET_ART });
 
-  const itemExists = data.arts.find((item: Item) => item.id === params.id);
+  if (!data || !data.arts || data.arts.length === 0) {
+    notFound();
+  }
+
+  const itemExists = data.arts.find((item: Item) => item.id === id);
 
   if (!itemExists) {
     notFound();

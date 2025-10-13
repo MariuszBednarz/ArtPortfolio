@@ -8,23 +8,13 @@ import Loader from "./Loader";
 
 import { CustomImageProps } from "@/types/components";
 
-const CustomImage = ({
-  alt,
-  width,
-  height,
-  ...props
-}: CustomImageProps): JSX.Element => {
+const CustomImage = ({ alt, width, height, ...props }: CustomImageProps) => {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
     <>
       {isLoading && <Loader />}
-      <div
-        className={clsx(
-          { "opacity-1": !isLoading },
-          { "opacity-0": isLoading }
-        )}
-      >
+      <div>
         <Image
           {...props}
           height={height}

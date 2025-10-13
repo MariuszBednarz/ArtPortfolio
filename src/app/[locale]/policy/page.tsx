@@ -1,6 +1,6 @@
 import { Policy } from "@/components/pages";
 
-const PolicyPage = (): JSX.Element => {
+const PolicyPage = () => {
   return <Policy />;
 };
 

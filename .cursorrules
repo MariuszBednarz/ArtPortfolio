@@ -1,0 +1,51 @@
+# Art Portfolio - AI Assistant Context
+
+## Stack
+- Next.js 15 (App Router) + TypeScript (strict)
+- Tailwind CSS + next-themes (dark mode)
+- Apollo Client + GraphQL (Hygraph CMS)
+- next-intl (i18n: en/pl)
+
+## Environment
+- **Windows + PowerShell** - Use bash-compatible commands
+- **Package Manager**: npm
+- **Dev**: `npm run dev` → localhost:3000
+
+## Structure
+```
+src/
+├── app/[locale]/         # i18n routes (en/pl)
+├── components/
+│   ├── pages/           # Page-level components
+│   ├── reusable/        # Shared UI (buttons, inputs, etc)
+│   └── sections/        # Layout (NavBar, Footer, Masonry)
+├── lib/apollo-client.ts # GraphQL setup
+├── types/               # TypeScript defs
+├── config.ts            # i18n config
+└── middleware.ts        # Locale routing
+```
+
+## Code Style
+- **Components**: Functional, Server by default
+- **Props**: TypeScript types (prefer `type` over `interface`)
+- **Imports**: Use `@/*` alias
+- **Styling**: Tailwind utilities, `dark:` prefix for dark mode
+- **Data**: Server Components fetch via `getClient()` (Apollo)
+
+## Key Patterns
+- Route-based i18n with `[locale]` segment
+- Translations in `messages/{locale}.json`
+- Images from Hygraph CDN via `next/image`
+- Google Analytics in Suspense boundary
+
+## Environment Variables
+```
+NEXT_PUBLIC_ENDPOINT       # Hygraph GraphQL API
+NEXT_GA_MEASUREMENT_ID     # Google Analytics
+```
+
+## Rules
+- Test both locales (en/pl) when changing i18n
+- Verify dark/light theme on style changes
+- Use PowerShell-compatible commands
+- Keep TypeScript strict, no implicit any

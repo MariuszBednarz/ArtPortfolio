@@ -1,4 +1,4 @@
-const NoResultIcon = (): JSX.Element => {
+const NoResultIcon = () => {
   return (
     <svg
       width="140"

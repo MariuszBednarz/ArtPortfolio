@@ -2,7 +2,7 @@ import clsx from "clsx";
 
 import { ChevronProps } from "@/types/components";
 
-const Chevron = ({ rotate, selected }: ChevronProps): JSX.Element => {
+const Chevron = ({ rotate, selected }: ChevronProps) => {
   return (
     <svg
       className={clsx("fill-dark dark:fill-bright transition-all", {

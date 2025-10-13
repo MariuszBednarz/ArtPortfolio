@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Select-Object FullName -First 10)",
+      "Bash(Get-ChildItem -Path \"D:\\art_portfolio\\src\\components\" -Directory)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

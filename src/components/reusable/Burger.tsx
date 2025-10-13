@@ -2,7 +2,7 @@ import clsx from "clsx";
 
 import { BurgerProps } from "@/types/components";
 
-const Burger = ({ toggleMenu, isOpen }: BurgerProps): JSX.Element => {
+const Burger = ({ toggleMenu, isOpen }: BurgerProps) => {
   return (
     <div
       className="w-7 h-7 flex flex-col justify-between cursor-pointer"

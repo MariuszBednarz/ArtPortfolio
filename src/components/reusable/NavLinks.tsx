@@ -5,7 +5,7 @@ import NavLink from "./NavLink";
 
 import { NavLinksProps } from "@/types/components";
 
-const NavLinks = ({ mobile, toggleMenu }: NavLinksProps): JSX.Element => {
+const NavLinks = ({ mobile, toggleMenu }: NavLinksProps) => {
   const t = useTranslations("Nav");
 
   return (

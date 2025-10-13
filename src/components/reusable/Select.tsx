@@ -15,7 +15,7 @@ const Select = ({
   defaultValue,
   defaultText,
   fixed,
-}: SelectProps): JSX.Element => {
+}: SelectProps) => {
   const t = useTranslations("Arts");
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -76,7 +76,7 @@ const Select = ({
         {variant === "colSelect"
           ? selectedOption === null
             ? defaultText
-            : t(selectedOption)
+            : t(String(selectedOption))
           : selectedOption === undefined
           ? defaultText
           : selectedOption === null
